@@ -4,6 +4,7 @@
 :root {
 	--red: hsl(359, 69%, 37%);
 	--grey: hsl(0, 0%, 23%);
+	--grey-text: hsl(0, 0%, 66%);
 	--white: hsl(0, 0%, 100%);
 
 	--accent: var(--red);
@@ -15,9 +16,15 @@
 
 	--max-width: 78em;
 	--border-radius: 0.75rem;
+	--max-width-wide: 90em;
 }
 
 html {
 	background-color: var(--background);
 	color: var(--text);
+}
+
+.container {
+	width: min(90%, var(--max-width));
+	margin-inline: auto;
 }

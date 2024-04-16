@@ -5,6 +5,11 @@ import Footer from "@/components/Footer/Footer";
 
 import "@/styles/main.scss";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
+config.autoAddCss = false;
+
 const roboto = Roboto({
 	weight: ["400", "500", "700"],
 	subsets: ["latin"],
