@@ -12,9 +12,51 @@ import {
 	faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
+import Image from "next/image";
+import Container from "../Container/Container";
+import { useSelectedLayoutSegment } from "next/navigation";
+
+const links = [
+	{
+		link: "/",
+		name: "Home",
+	},
+	{
+		link: "/about-us",
+		name: "About Us",
+	},
+	{
+		link: "/services",
+		name: "Services",
+	},
+	{
+		link: "/blog",
+		name: "Blog",
+	},
+	{
+		link: "/gallery",
+		name: "Gallery",
+	},
+	{
+		link: "/contact-us",
+		name: "Contact Us",
+	},
+];
 
 const Navigation = () => {
 	const [active, setActive] = useState(false);
+	const segment = useSelectedLayoutSegment();
+
+	const navLinks = links.map((link) => {
+		let slug = "/" + (segment ?? "");
+		const isActive = slug === link.link;
+
+		return (
+			<li key={link.link} className={`${isActive && styles.active}`}>
+				<Link href={link.link}>{link.name}</Link>
+			</li>
+		);
+	});
 
 	return (
 		<nav className={styles.nav}>
@@ -63,7 +105,35 @@ const Navigation = () => {
 			</div>
 
 			<div className={styles.nav_main}>
-				<div className={styles.logo}></div>
+				<Container>
+					<div className={styles.logo}>
+						<Link href="/">
+							<Image
+								src="/logo.png"
+								alt="Renew Automotive Services"
+								width="162"
+								height="48"
+							/>
+						</Link>
+					</div>
+
+					<div className={styles.nav_items}>
+						<div className={styles.toggle}>
+							<input
+								type="checkbox"
+								id="toggle"
+								style={{ display: "none" }}
+							/>
+							<label htmlFor="toggle">
+								<span></span>
+							</label>
+						</div>
+
+						<div className={styles.nav_list}>
+							<ul>{navLinks}</ul>
+						</div>
+					</div>
+				</Container>
 			</div>
 		</nav>
 	);
