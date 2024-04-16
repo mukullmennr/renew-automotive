@@ -1,6 +1,10 @@
 @use "/src/styles/abstract" as ab;
 
 .nav {
+	&:has(input:checked) .nav_list {
+		clip-path: inset(0);
+	}
+
 	&_upper {
 		background-color: var(--grey);
 		color: var(--grey-text);
@@ -33,7 +37,7 @@
 
 			@include ab.screen-64 {
 				grid-template-rows: 1fr;
-				margin-inline: auto;
+				margin-inline-start: auto;
 
 				border-color: transparent;
 				padding-block: 0;
@@ -155,6 +159,152 @@
 
 						border-radius: 50%;
 					}
+				}
+			}
+		}
+	}
+
+	&_main {
+		padding-block: 1em;
+		box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+
+		> div {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			@include ab.screen-48 {
+				justify-content: flex-start;
+			}
+
+			@include ab.screen-64 {
+				gap: 5rem;
+			}
+		}
+
+		.nav_items {
+			.toggle {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+
+				display: flex;
+				align-items: center;
+
+				label {
+					z-index: 10;
+				}
+
+				input:checked + label span {
+					background-color: transparent;
+					&::before,
+					&::after {
+						top: 0;
+					}
+
+					&::before {
+						rotate: 45deg;
+					}
+
+					&::after {
+						rotate: -45deg;
+					}
+				}
+
+				span {
+					--dis: 0.5rem;
+
+					display: inline-block;
+					width: 2rem;
+					background-color: var(--grey);
+					height: 0.2rem;
+					position: relative;
+
+					border-radius: 50vw;
+					transition: background-color 300ms;
+
+					&::before,
+					&::after {
+						content: "";
+						position: absolute;
+
+						width: 2rem;
+						height: 0.2rem;
+						background-color: var(--grey);
+						top: var(--dis);
+
+						border-radius: inherit;
+
+						transition: top 300ms, rotate 300ms;
+					}
+
+					&::before {
+						top: calc(-1 * var(--dis));
+					}
+				}
+
+				@include ab.screen-48 {
+					display: none;
+				}
+			}
+		}
+
+		.nav_list {
+			position: fixed;
+			inset: 0;
+			background-color: var(--background);
+
+			clip-path: inset(0 0 100% 0);
+
+			transition: clip-path 300ms cubic-bezier(0.79, 0.33, 0.14, 0.53);
+
+			ul {
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				height: 100%;
+
+				display: grid;
+				gap: 2em;
+
+				align-content: center;
+				padding-inline-start: 3em;
+
+				font-size: 1.5rem;
+
+				li.active a {
+					text-decoration-color: var(--accent);
+				}
+
+				a {
+					color: var(--grey);
+
+					text-decoration-color: transparent;
+
+					text-underline-offset: 0.5rem;
+					text-decoration-thickness: 0.175rem;
+
+					font-weight: 600;
+				}
+			}
+
+			@include ab.screen-48 {
+				position: static;
+				clip-path: none;
+
+				ul {
+					display: flex;
+					gap: clamp(1.5rem, 2vw, 2rem);
+
+					a {
+						font-size: clamp(1rem, 1.5vw, 1.25rem);
+					}
+				}
+			}
+
+			@include ab.screen-64 {
+				ul {
+					gap: clamp(3rem, 4vw, 4rem);
 				}
 			}
 		}
