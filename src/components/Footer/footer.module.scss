@@ -1,5 +1,20 @@
 @use "/src/styles/abstract" as ab;
 
 .footer {
-	outline: 2px solid red;
+    outline: 2px solid red;
+    iframe {
+        width: 100%;
+        // aspect-ratio: 1/0.24;
+        // @media (orientation: portrait) {
+        //     aspect-ratio: 1/0.6;
+        // }
+    }
+    .sub_footer {
+        width: min(90%, var(--max-width));
+        margin-inline: auto;
+        h5 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+    }
 }
