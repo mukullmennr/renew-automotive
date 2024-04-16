@@ -1,7 +1,7 @@
 @use "/src/styles/abstract" as ab;
 
 .footer {
-    outline: 2px solid red;
+    // outline: 2px solid red;
     iframe {
         width: 100%;
         // aspect-ratio: 1/0.24;
@@ -10,11 +10,209 @@
         // }
     }
     .sub_footer {
-        width: min(90%, var(--max-width));
-        margin-inline: auto;
-        h5 {
-            font-size: 1.25rem;
-            font-weight: 700;
+        background-image: linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.803) 100%,
+                rgba(0, 0, 0, 0.822) 100%
+            ),
+            url("../../../public/footer_bg.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        &_content {
+            width: min(90%, var(--max-width));
+            margin-inline: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            row-gap: 1em;
+            padding-top: 3em;
+            @include ab.screen-45 {
+                grid-template-columns: repeat(9, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+                column-gap: clamp(1em, 4vw, 4em);
+                padding-top: 0;
+                padding-block: 3em;
+            }
+            h4 {
+                font-size: clamp(1rem, 1.25vw, 1.25rem);
+                font-weight: 700;
+                color: white;
+            }
+            p {
+                font-size: clamp(0.6rem, 1vw, 1rem);
+                color: white;
+            }
+            a {
+                font-size: clamp(0.6rem, 1vw, 1rem);
+                color: white;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .logo {
+                grid-area: 1/1/2/3;
+                @include ab.screen-45 {
+                    grid-area: 1/1/2/3;
+                }
+                img {
+                    width: 16.6rem;
+                    height: 4.8rem;
+                    // outline: 2px solid red;
+                }
+            }
+            .contact {
+                grid-area: 2/1/4/3;
+                @include ab.screen-45 {
+                    grid-area: 1/3/2/6;
+                }
+                // outline: 2px solid red;
+                display: grid;
+                gap: 1em;
+                > :nth-child(4) {
+                    display: flex;
+                    gap: clamp(0.5em, 1vw, 1em);
+                }
+            }
+            .nav {
+                grid-area: 4/1/6/2;
+                @include ab.screen-45 {
+                    grid-area: 1/6/2/8;
+                }
+                // outline: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                > div {
+                    display: flex;
+                    gap: clamp(0.5em, 1vw, 1em);
+                    // outline: 2px solid red;
+                    > :nth-child(1) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5em;
+                    }
+                    > :nth-child(2) {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.5em;
+                    }
+                }
+            }
+            .get_in_touch {
+                grid-area: 4/2/6/3;
+                @include ab.screen-45 {
+                    grid-area: 1/8/2/10;
+                }
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+                // outline: 2px solid red;
+                > div {
+                    display: flex;
+                    gap: clamp(0.8em, 1vw, 1em);
+                    a {
+                        width: 1.8em;
+                        aspect-ratio: 1 / 1;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: transparent;
+                        transition: background-color 300ms;
+                        // outline: 2px solid red;
+                        background-color: white;
+
+                        svg {
+                            color: var(--grey);
+                        }
+                        // facebook
+                        &.facebook {
+                            &:hover {
+                                background-color: var(--facebook);
+                            }
+                        }
+
+                        // twitter
+                        &.twitter {
+                            &:hover {
+                                background-color: var(--threads);
+                            }
+                        }
+
+                        // linkedin
+                        &.linkedin {
+                            &:hover {
+                                background-color: var(--linkedin);
+                            }
+                        }
+
+                        // // instagram
+                        // &.instagram {
+                        //     &:hover {
+                        //         // background-color: ab.$instagram;
+                        //         background-image: radial-gradient(
+                        //                 circle farthest-corner at 35% 90%,
+                        //                 #fec564,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 circle farthest-corner at 0 140%,
+                        //                 #fec564,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 ellipse farthest-corner at 0 -25%,
+                        //                 #5258cf,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 ellipse farthest-corner at 20% -50%,
+                        //                 #5258cf,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 ellipse farthest-corner at 100% 0,
+                        //                 #893dc2,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 ellipse farthest-corner at 60% -20%,
+                        //                 #893dc2,
+                        //                 transparent 50%
+                        //             ),
+                        //             radial-gradient(
+                        //                 ellipse farthest-corner at 100% 100%,
+                        //                 #d9317a,
+                        //                 transparent
+                        //             ),
+                        //             linear-gradient(
+                        //                 #6559ca,
+                        //                 #bc318f 30%,
+                        //                 #e33f5f 50%,
+                        //                 #f77638 70%,
+                        //                 #fec66d 100%
+                        //             );
+                        //     }
+                        // }
+
+                        // threads
+
+                        &.whatsapp {
+                            &:hover {
+                                background-color: var(--whatsapp);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .copy {
+            text-align: center;
+            color: var(--white);
+            font-size: 0.8rem;
+            padding-block: 1em;
         }
     }
 }

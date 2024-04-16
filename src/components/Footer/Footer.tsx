@@ -21,12 +21,12 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             <div className={styles.sub_footer}>
-                <div>
-                    <div>
+                <div className={styles.sub_footer_content}>
+                    <div className={styles.logo}>
                         <img src="/white_logo.svg" alt="logo" />
                     </div>
-                    <div>
-                        <h5>Contact Us</h5>
+                    <div className={styles.contact}>
+                        <h4>Contact Us</h4>
                         <div>
                             <p>(470)3849791</p>
                             <p>contact@renewautomotiveservices.com</p>
@@ -48,8 +48,8 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h5>Navigation</h5>
+                    <div className={styles.nav}>
+                        <h4>Navigation</h4>
                         <div>
                             <div>
                                 <Link href="">Home</Link>
@@ -65,25 +65,25 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <h5></h5>
+                    <div className={styles.get_in_touch}>
+                        <h4>Get in Touch</h4>
                         <div>
-                            <Link href="">
+                            <Link href="" className={styles.facebook}>
                                 <FontAwesomeIcon icon={faFacebookF} />
                             </Link>
-                            <Link href="">
+                            <Link href="" className={styles.twitter}>
                                 <FontAwesomeIcon icon={faXTwitter} />
                             </Link>
-                            <Link href="">
+                            <Link href="" className={styles.linkedin}>
                                 <FontAwesomeIcon icon={faLinkedinIn} />
                             </Link>
-                            <Link href="">
+                            <Link href="" className={styles.whatsapp}>
                                 <FontAwesomeIcon icon={faWhatsapp} />
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className={styles.copy}>
                     <p>
                         Copyright © 2023 , Renew Automotive Services All Rights
                         Reserved
