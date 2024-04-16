@@ -1,6 +1,11 @@
 @use "/src/styles/abstract" as ab;
 
 .nav {
+	position: sticky;
+	top: 0em;
+
+	background-color: var(--white);
+
 	&:has(input:checked) .nav_list {
 		clip-path: inset(0);
 	}
