@@ -8,6 +8,7 @@ import {
     faLinkedinIn,
     faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
+import Container from "../Container/Container";
 const Footer = () => {
     return (
         <footer className={styles.footer}>
@@ -21,68 +22,73 @@ const Footer = () => {
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             <div className={styles.sub_footer}>
-                <div className={styles.sub_footer_content}>
-                    <div className={styles.logo}>
-                        <img src="/white_logo.svg" alt="logo" />
-                    </div>
-                    <div className={styles.contact}>
-                        <h4>Contact Us</h4>
-                        <div>
-                            <p>(470)3849791</p>
-                            <p>contact@renewautomotiveservices.com</p>
+                <Container>
+                    <div className={styles.sub_footer_content}>
+                        <div className={styles.logo}>
+                            <img src="/white_logo.svg" alt="logo" />
                         </div>
-                        <div>
-                            <p>4337 McBrayer Rd 400, </p>
-                            <p>Oakwood, GA 30566</p>
-                        </div>
-                        <div>
+                        <div className={styles.contact}>
+                            <h4>Contact Us</h4>
                             <div>
-                                <p>Mon-Fri</p>
-                                <p>Saturday</p>
-                                <p>Sunday</p>
+                                <p>(470)3849791</p>
+                                <p>contact@renewautomotiveservices.com</p>
                             </div>
                             <div>
-                                <p>08:30 am - 05:30 pm</p>
-                                <p>08:30 am - noon (drop-off only)</p>
-                                <p>Closed </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={styles.nav}>
-                        <h4>Navigation</h4>
-                        <div>
-                            <div>
-                                <Link href="">Home</Link>
-                                <Link href="">About Us</Link>
-                                <Link href="">Services</Link>
-                                <Link href="">Privacy Policy</Link>
+                                <p>4337 McBrayer Rd 400, </p>
+                                <p>Oakwood, GA 30566</p>
                             </div>
                             <div>
-                                <Link href="">Gallery</Link>
-                                <Link href="">Contact Us</Link>
-                                <Link href="">Blog</Link>
-                                <Link href="">Disclaimer</Link>
+                                <div>
+                                    <p>Mon-Fri</p>
+                                    <p>08:30 am - 05:30 pm</p>
+                                </div>
+                                <div>
+                                    <p>Saturday</p>
+                                    <p>08:30 am - noon (drop-off only)</p>
+                                </div>
+                                <div>
+                                    <p>Sunday</p>
+                                    <p>Closed </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.nav}>
+                            <h4>Navigation</h4>
+                            <div>
+                                <div>
+                                    <Link href="">Home</Link>
+                                    <Link href="">About Us</Link>
+                                    <Link href="">Services</Link>
+                                    <Link href="">Privacy Policy</Link>
+                                </div>
+                                <div>
+                                    <Link href="">Gallery</Link>
+                                    <Link href="">Contact Us</Link>
+                                    <Link href="">Blog</Link>
+                                    <Link href="">Disclaimer</Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.get_in_touch}>
+                            <h4>Get in Touch</h4>
+                            <div>
+                                <Link href="" className={styles.facebook}>
+                                    <FontAwesomeIcon icon={faFacebookF} />
+                                </Link>
+                                <Link href="" className={styles.twitter}>
+                                    <FontAwesomeIcon icon={faXTwitter} />
+                                </Link>
+                                <Link href="" className={styles.linkedin}>
+                                    <FontAwesomeIcon icon={faLinkedinIn} />
+                                </Link>
+                                <Link href="" className={styles.whatsapp}>
+                                    <FontAwesomeIcon icon={faWhatsapp} />
+                                </Link>
                             </div>
                         </div>
                     </div>
-                    <div className={styles.get_in_touch}>
-                        <h4>Get in Touch</h4>
-                        <div>
-                            <Link href="" className={styles.facebook}>
-                                <FontAwesomeIcon icon={faFacebookF} />
-                            </Link>
-                            <Link href="" className={styles.twitter}>
-                                <FontAwesomeIcon icon={faXTwitter} />
-                            </Link>
-                            <Link href="" className={styles.linkedin}>
-                                <FontAwesomeIcon icon={faLinkedinIn} />
-                            </Link>
-                            <Link href="" className={styles.whatsapp}>
-                                <FontAwesomeIcon icon={faWhatsapp} />
-                            </Link>
-                        </div>
-                    </div>
-                </div>
+                </Container>
+
                 <div className={styles.copy}>
                     <p>
                         Copyright © 2023 , Renew Automotive Services All Rights
