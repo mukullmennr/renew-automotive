@@ -1,8 +1,12 @@
 import Automobiles from "@/components/Automobiles/Automobiles";
-export default function Home() {
+import React from "react";
+
+const page = () => {
 	return (
 		<div className="group">
 			<Automobiles />
 		</div>
 	);
-}
+};
+
+export default page;
