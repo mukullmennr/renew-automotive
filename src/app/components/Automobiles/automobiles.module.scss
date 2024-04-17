@@ -25,21 +25,22 @@
     }
 }
 .carousel {
-    overflow: hidden;
+    overflow-x: hidden;
     margin-block: 3em;
     padding-bottom: 2em;
-    // z-index: -2;
+    // outline: 2px solid rgb(7, 92, 132);
     > div {
         display: flex;
-        gap: 0.5em;
-
-        animation: rotate 15s linear infinite;
+        gap: 0.2em;
+        animation: rotate 10s linear infinite;
+        // outline: 2px solid red;
 
         &:hover {
             animation-play-state: paused;
         }
         img {
             border: 0.1em solid #edeff0;
+            // width: clamp(7.5rem, 10.7vw, 10.7rem);
         }
     }
 }
@@ -49,6 +50,6 @@
     }
 
     100% {
-        translate: -2990px;
+        translate: -2163px;
     }
 }

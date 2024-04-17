@@ -1,7 +1,7 @@
 import React from "react";
 import Container from "../../../components/Container/Container";
 import style from "./automobiles.module.scss";
-export const Automobiles = () => {
+const Automobiles = () => {
     return (
         <div>
             <Container>
@@ -17,46 +17,48 @@ export const Automobiles = () => {
                     </div>
                 </div>
             </Container>
+
             <div className={style.carousel}>
                 <div>
-                    <img src="/brand-01.png" alt="" />
-                    <img src="/brand-02.png" alt="" />
-                    <img src="/brand-03.png" alt="" />
-                    <img src="/brand-04.png" alt="" />
-                    <img src="/brand-05.png" alt="" />
-                    <img src="/brand-06.png" alt="" />
-                    <img src="/brand-07.png" alt="" />
-                    <img src="/brand-08.png" alt="" />
-                    <img src="/brand-09.png" alt="" />
-                    <img src="/brand-10.png" alt="" />
-                    <img src="/brand-11.png" alt="" />
-                    <img src="/brand-12.png" alt="" />
-                    <img src="/brand-01.png" alt="" />
-                    <img src="/brand-02.png" alt="" />
-                    <img src="/brand-03.png" alt="" />
-                    <img src="/brand-04.png" alt="" />
-                    <img src="/brand-05.png" alt="" />
-                    <img src="/brand-06.png" alt="" />
-                    <img src="/brand-07.png" alt="" />
-                    <img src="/brand-08.png" alt="" />
-                    <img src="/brand-09.png" alt="" />
-                    <img src="/brand-10.png" alt="" />
-                    <img src="/brand-11.png" alt="" />
-                    <img src="/brand-12.png" alt="" />
-                    <img src="/brand-01.png" alt="" />
-                    <img src="/brand-02.png" alt="" />
-                    <img src="/brand-03.png" alt="" />
-                    <img src="/brand-04.png" alt="" />
-                    <img src="/brand-05.png" alt="" />
-                    <img src="/brand-06.png" alt="" />
-                    <img src="/brand-07.png" alt="" />
-                    <img src="/brand-08.png" alt="" />
-                    <img src="/brand-09.png" alt="" />
-                    <img src="/brand-10.png" alt="" />
-                    <img src="/brand-11.png" alt="" />
-                    <img src="/brand-12.png" alt="" />
+                    <img src="/brand-01.png" alt="brand_logo" />
+                    <img src="/brand-02.png" alt="brand_logo" />
+                    <img src="/brand-03.png" alt="brand_logo" />
+                    <img src="/brand-04.png" alt="brand_logo" />
+                    <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" />
+                    <img src="/brand-07.png" alt="brand_logo" />
+                    <img src="/brand-08.png" alt="brand_logo" />
+                    <img src="/brand-09.png" alt="brand_logo" />
+                    <img src="/brand-10.png" alt="brand_logo" />
+                    <img src="/brand-11.png" alt="brand_logo" />
+                    <img src="/brand-12.png" alt="brand_logo" />
+                    <img src="/brand-01.png" alt="brand_logo" />
+                    <img src="/brand-02.png" alt="brand_logo" />
+                    <img src="/brand-03.png" alt="brand_logo" />
+                    <img src="/brand-04.png" alt="brand_logo" />
+                    <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" />
+                    <img src="/brand-07.png" alt="brand_logo" />
+                    <img src="/brand-08.png" alt="brand_logo" />
+                    <img src="/brand-09.png" alt="brand_logo" />
+                    <img src="/brand-10.png" alt="brand_logo" />
+                    <img src="/brand-11.png" alt="brand_logo" />
+                    <img src="/brand-12.png" alt="brand_logo" />
+                    <img src="/brand-01.png" alt="brand_logo" />
+                    <img src="/brand-02.png" alt="brand_logo" />
+                    <img src="/brand-03.png" alt="brand_logo" />
+                    <img src="/brand-04.png" alt="brand_logo" />
+                    <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" />
+                    <img src="/brand-07.png" alt="brand_logo" />
+                    <img src="/brand-08.png" alt="brand_logo" />
+                    <img src="/brand-09.png" alt="brand_logo" />
+                    <img src="/brand-10.png" alt="brand_logo" />
+                    <img src="/brand-11.png" alt="brand_logo" />
+                    <img src="/brand-12.png" alt="brand_logo" />
                 </div>
             </div>
         </div>
     );
 };
+export default Automobiles;

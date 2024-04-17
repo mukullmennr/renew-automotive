@@ -1,0 +1,33 @@
+@use "/src/styles/abstract" as ab;
+.faq {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .appointment {
+        position: relative;
+
+        > div {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: clamp(20rem, 24.3vw, 24.3rem);
+            // outline: 2px solid red;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5em;
+            margin: 0 0 2em 2em;
+            h3 {
+                color: var(--white);
+                font-size: clamp(2rem, 2.7vw, 2.7rem);
+            }
+            button {
+                background: transparent;
+                color: var(--white);
+                border: 0.1em solid var(--white);
+                width: clamp(10rem, 12vw, 12rem);
+                padding-block: 0.5em;
+                cursor: pointer;
+                font-size: clamp(0.75rem, 1vw, 1rem);
+            }
+        }
+    }
+}
