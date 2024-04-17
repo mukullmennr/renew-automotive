@@ -1,0 +1,80 @@
+@use "/src/styles/abstract" as ab;
+
+.hero {
+	width: 100%;
+
+	min-height: 55dvb;
+
+	background-image: linear-gradient(
+			90deg,
+			rgba(0, 0, 0, 0.75),
+			rgba(0, 0, 0, 0.75)
+		),
+		url("../../../../public/hero.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	color: var(--white);
+	padding-block: 4rem;
+
+	@include ab.landscape {
+		min-height: 70dvb;
+	}
+
+	> * {
+		height: 100%;
+	}
+
+	.container {
+		display: grid;
+		gap: clamp(1.5rem, 3.25vi, 3rem);
+
+		place-items: center;
+		height: 100%;
+		place-content: center;
+
+		text-align: center;
+
+		.heading {
+			font-size: clamp(1.5rem, 3.75vi, 3.75rem);
+			line-height: clamp(2rem, 4.5vi, 4.5rem);
+		}
+
+		.text {
+			font-size: clamp(0.75rem, 1.25vi, 1rem);
+
+			@include ab.screen-40 {
+				font-weight: 500;
+			}
+		}
+
+		.button {
+			font-size: clamp(0.75rem, 1.25vi, 1rem);
+
+			button {
+				--bg: transparent;
+				--color: var(--white);
+
+				color: var(--color);
+				background-color: var(--bg);
+
+				text-transform: uppercase;
+				border: 0.1rem solid var(--white);
+
+				padding-inline: 1.5rem;
+				padding-block: 0.6rem;
+
+				cursor: pointer;
+				font-weight: 500;
+
+				transition: background-color 300ms, color 300ms;
+
+				&:hover,
+				&:focus {
+					--bg: var(--white);
+					--color: var(--accent);
+				}
+			}
+		}
+	}
+}

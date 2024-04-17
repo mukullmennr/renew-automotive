@@ -39,3 +39,17 @@
 		@content;
 	}
 }
+
+// landscape
+@mixin landscape {
+	@media (orientation: landscape) {
+		@content;
+	}
+}
+
+// portrait
+@mixin portrait {
+	@media (orientation: portrait) {
+		@content;
+	}
+}
