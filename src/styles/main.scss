@@ -2,35 +2,35 @@
 @use "./abstract/reset";
 
 :root {
-    --red: hsl(359, 69%, 37%);
-    --grey: hsl(0, 0%, 23%);
-    --grey-text: hsl(0, 0%, 66%);
-    --white: hsl(0, 0%, 100%);
+	--red: hsl(359, 69%, 37%);
+	--grey: hsl(0, 0%, 23%);
+	--grey-text: hsl(0, 0%, 66%);
+	--white: hsl(0, 0%, 100%);
 
-    --accent: var(--red);
-    --accent-light: hsl(359, 69%, 42%);
-    --accent-dark: hsl(359, 69%, 32%);
+	--accent: var(--red);
+	--accent-light: hsl(359, 69%, 42%);
+	--accent-dark: hsl(359, 69%, 32%);
 
-    --text: var(--grey);
-    --background: var(--white);
+	--text: var(--grey);
+	--background: var(--white);
 
-    --max-width: 78em;
-    --border-radius: 0.75rem;
-    --max-width-wide: 90em;
-    --linkedin: #0077b5;
-    --twitter: #1d9bf0;
-    --instagram: #da426c;
-    --facebook: #4867aa;
-    --threads: #000000;
-    --whatsapp: #25d366;
+	--max-width: 78em;
+	--border-radius: 0.75rem;
+	--max-width-wide: 90em;
+	--linkedin: #0077b5;
+	--twitter: #1d9bf0;
+	--instagram: #da426c;
+	--facebook: #4867aa;
+	--threads: #000000;
+	--whatsapp: #25d366;
 }
 
 html {
-    background-color: var(--background);
-    color: var(--text);
+	background-color: var(--background);
+	color: var(--text);
 }
 
-.container {
-    width: min(90%, var(--max-width));
-    margin-inline: auto;
+.group {
+	display: grid;
+	gap: clamp(3em, 5vw, 5em);
 }
