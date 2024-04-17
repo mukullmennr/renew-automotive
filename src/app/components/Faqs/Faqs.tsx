@@ -15,7 +15,7 @@ const Faqs = () => {
                         <div>
                             <Accordion.Root type="single" defaultValue="item-1">
                                 <Accordion.Item value="item-1">
-                                    <Accordion.Header>
+                              
                                         <Accordion.Trigger>
                                             <h4>
                                                 How often should I have my
@@ -26,7 +26,7 @@ const Faqs = () => {
                                                 <span></span>
                                             </div>
                                         </Accordion.Trigger>
-                                    </Accordion.Header>
+                               
                                     <Accordion.Content>
                                         <p>
                                             We recommend getting your engine
@@ -38,14 +38,14 @@ const Faqs = () => {
                                     </Accordion.Content>
                                 </Accordion.Item>
                                 <Accordion.Item value="item-1">
-                                    <Accordion.Header>
+                                 
                                         <Accordion.Trigger>
                                             <h4>
                                                 Do you offer multipoint vehicle
                                                 inspections?
                                             </h4>
                                         </Accordion.Trigger>
-                                    </Accordion.Header>
+                                 
                                     <Accordion.Content>
                                         <p>
                                             We recommend getting your engine
@@ -57,14 +57,14 @@ const Faqs = () => {
                                     </Accordion.Content>
                                 </Accordion.Item>
                                 <Accordion.Item value="item-1">
-                                    <Accordion.Header>
+                              
                                         <Accordion.Trigger>
                                             <h4>
                                                 Do you offer financing options
                                                 for automotive repairs?
                                             </h4>
                                         </Accordion.Trigger>
-                                    </Accordion.Header>
+                                 
                                     <Accordion.Content>
                                         <p>
                                             We recommend getting your engine
@@ -76,14 +76,14 @@ const Faqs = () => {
                                     </Accordion.Content>
                                 </Accordion.Item>
                                 <Accordion.Item value="item-1">
-                                    <Accordion.Header>
+                                    
                                         <Accordion.Trigger>
                                             <h4>
                                                 Do you provide warranty coverage
                                                 for your services?
                                             </h4>
                                         </Accordion.Trigger>
-                                    </Accordion.Header>
+                                  
                                     <Accordion.Content>
                                         <p>
                                             We recommend getting your engine
