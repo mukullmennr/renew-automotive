@@ -4,3 +4,12 @@
 	width: min(90%, var(--max-width));
 	margin-inline: auto;
 }
+
+.container_wide_small {
+	width: min(100%, var(--max-width));
+	margin-inline: auto;
+}
+
+.full {
+	width: 100%;
+}
