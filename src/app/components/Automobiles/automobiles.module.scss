@@ -1,0 +1,54 @@
+.content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    h3 {
+        font-size: clamp(2rem, 2.5vw, 2.5rem);
+    }
+    h4 {
+        font-size: clamp(0.75rem, 1vw, 1rem);
+    }
+    .line {
+        // outline: 2px solid red;
+        display: flex;
+        gap: 0.2em;
+        justify-content: center;
+        span {
+            height: 0.15em;
+            background-color: #c2171a;
+            width: 0.15em;
+        }
+        > :nth-child(1) {
+            width: 2.1em;
+        }
+    }
+}
+.carousel {
+    overflow: hidden;
+    margin-block: 3em;
+    padding-bottom: 2em;
+    // z-index: -2;
+    > div {
+        display: flex;
+        gap: 0.5em;
+
+        animation: rotate 15s linear infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+        img {
+            border: 0.1em solid #edeff0;
+        }
+    }
+}
+@keyframes rotate {
+    0% {
+        translate: 0;
+    }
+
+    100% {
+        translate: -2990px;
+    }
+}

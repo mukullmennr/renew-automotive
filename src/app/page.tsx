@@ -1,12 +1,12 @@
-import Automobiles from "@/components/Automobiles/Automobiles";
+import { Automobiles } from "@/app/components/Automobiles/Automobiles";
 import React from "react";
 
 const page = () => {
-	return (
-		<div className="group">
-			<Automobiles />
-		</div>
-	);
+    return (
+        <div className="group">
+            <Automobiles />
+        </div>
+    );
 };
 
 export default page;
