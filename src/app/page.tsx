@@ -9,8 +9,8 @@ const page = () => {
 		<div className="group">
 			<Hero />
 			<Services />
-			<Faqs />
 			<About />
+			<Faqs />
 			<Automobiles />
 		</div>
 	);
