@@ -40,7 +40,9 @@
 		--service-count: 6;
 
 		.tab_list {
-			max-width: 100dvi;
+			// max-width: 100dvi;
+			max-width: calc(var(--vw) * 100);
+
 			overflow-x: auto;
 
 			> div {
