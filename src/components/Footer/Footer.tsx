@@ -30,7 +30,9 @@ const Footer = () => {
                         <div className={styles.contact}>
                             <h4>Contact Us</h4>
                             <div>
-                                <p>(470)3849791</p>
+                                <a href="tel:(470 ) 384 9791">
+                                    (470 ) 384 9791
+                                </a>
                                 <p>contact@renewautomotiveservices.com</p>
                             </div>
                             <div>
