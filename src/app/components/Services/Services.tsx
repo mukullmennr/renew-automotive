@@ -9,9 +9,9 @@ const Services = () => {
 		<div className={styles.services}>
 			<Container>
 				<div className={styles.heading_container}>
-					<h2 className={styles.heading}>Our Featured Services</h2>
+					<h2 className="subheading">Our Featured Services</h2>
 
-					<p className={styles.text}>
+					<p className="subheading-support">
 						We offer full service auto repair & maintenance
 					</p>
 

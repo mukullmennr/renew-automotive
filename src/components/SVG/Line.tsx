@@ -13,21 +13,21 @@ const Line = () => {
 				width="47"
 				height="3"
 				transform="translate(0.5)"
-				fill="#A11E21"
+				fill="#C2171A"
 			/>
 			<rect
 				x="49.7002"
 				y="0.000244141"
 				width="3.2"
 				height="3.2"
-				fill="#A11E21"
+				fill="#C2171A"
 			/>
 			<rect
 				x="55.0332"
 				y="0.000244141"
 				width="3.2"
 				height="3.2"
-				fill="#A11E21"
+				fill="#C2171A"
 			/>
 		</svg>
 	);

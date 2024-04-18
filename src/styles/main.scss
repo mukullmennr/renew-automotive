@@ -4,6 +4,7 @@
 :root {
 	--vw: 1vw;
 	--red: #9f1d1f;
+	--red: #c4171a;
 
 	--grey: #3b3b3b;
 	--grey-text: #a8a8a8;
@@ -11,8 +12,8 @@
 	--white: #ffffff;
 
 	--accent: var(--red);
-	--accent-light: hsl(359, 69%, 42%);
-	--accent-dark: hsl(359, 69%, 32%);
+	--accent-light: hsl(359, 79%, 48%);
+	--accent-dark: hsl(359, 79%, 38%);
 
 	--text: var(--grey);
 	--background: var(--white);
@@ -35,12 +36,18 @@ html {
 	scrollbar-gutter: stable;
 }
 
-body {
-}
-
 .group {
 	max-width: 100dvi;
 
 	display: grid;
 	gap: clamp(3em, 5vw, 5em);
+}
+
+.subheading {
+	font-size: clamp(2rem, 2.5vi, 2.25rem);
+}
+
+.subheading-support {
+	font-size: clamp(0.75rem, 1.25vi, 1rem);
+	font-weight: 600;
 }
