@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import * as Tabs from "@radix-ui/react-tabs";
 import styles from "./services.module.scss";
 import Diagnostic from "@/components/SVG/Diagnostic";
@@ -52,13 +52,6 @@ const data = [
 ];
 
 const ServiceGroup = () => {
-	useEffect(() => {
-		new ResizeObserver(() => {
-			let vw = document.documentElement.clientWidth / 100;
-			document.documentElement.style.setProperty("--vw", `${vw}px`);
-		}).observe(document.documentElement);
-	}, []);
-
 	const getSVG = (title: string) => {
 		switch (title) {
 			case "Diagnostics":

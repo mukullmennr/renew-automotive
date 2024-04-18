@@ -7,6 +7,7 @@ import "@/styles/main.scss";
 
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import ViewPortSize from "@/components/ViewPortSize/ViewPortSize";
 
 config.autoAddCss = false;
 
@@ -29,6 +30,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={roboto.className}>
+				<ViewPortSize />
 				<Navigation />
 				{children}
 				<Footer />
