@@ -1,0 +1,60 @@
+@use "../../../../styles/abstract/media-queries" as ab;
+.content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+    padding-block: 2.5em;
+    h4 {
+        font-size: clamp(1.6rem, 2vw, 2rem);
+        span {
+            color: var(--red);
+        }
+    }
+    p {
+        font-weight: 600;
+        font-size: 1rem;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+        font-size: clamp(1rem, 1.4vw, 1.4rem);
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    button {
+        background-color: transparent;
+        border: 0.1em solid black;
+        width: clamp(7em, 9.2vw, 9.2em);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 1rem;
+        padding-block: 0.5em;
+        transition: all 200ms ease-in-out;
+        &:hover {
+            color: var(--white);
+            background-color: black;
+        }
+    }
+    .watermark {
+        position: absolute;
+        // outline: 2px solid red;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        p {
+            text-align: center;
+            font-weight: 600;
+            font-size: clamp(5rem, 9vw, 9rem);
+            opacity: 0.05;
+        }
+    }
+}
