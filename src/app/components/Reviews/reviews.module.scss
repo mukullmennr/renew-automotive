@@ -1,0 +1,133 @@
+@use "/src/styles/abstract" as ab;
+.experience {
+    background-image: url("../../../../public/review_bg.png");
+    background-position: 70% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    padding-block: 2em;
+    @include ab.screen-48 {
+        flex-direction: row;
+        justify-content: center;
+        padding-block: 4em;
+        padding-bottom: 15em;
+    }
+    .content {
+        display: grid;
+        color: var(--white);
+        grid-template-columns: repeat(2, 1fr);
+        // outline: 2px solid red;
+        @include ab.screen-40 {
+        }
+        .num {
+            // outline: 2px solid red;
+            display: flex;
+            justify-content: end;
+            width: 100%;
+            padding-right: 0.5em;
+            border-right: 0.2em solid #a11e21;
+            p {
+                font-size: 2.57813rem;
+                font-weight: 600;
+            }
+        }
+        .var {
+            align-self: center;
+
+            padding-left: 0.5em;
+            p {
+                font-size: clamp(0.75rem, 1vw, 1rem);
+                font-weight: 600;
+                width: 6.1em;
+            }
+        }
+    }
+}
+.review {
+    @include ab.screen-48 {
+        width: min(90%, var(--max-width));
+        margin-inline: auto;
+        outline: 2px solid red;
+    }
+    &_img {
+        img {
+            width: 100%;
+            @include ab.screen-48 {
+                max-width: 25em;
+            }
+        }
+    }
+    .content {
+        text-align: center;
+        position: relative;
+        padding-block: 2em;
+        .heading {
+            h4 {
+                font-size: clamp(2rem, 2.25vw, 2.25rem);
+            }
+        }
+        .icon {
+            position: absolute;
+            top: -9%;
+            // outline: 2px solid red;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .review_container {
+            display: flex;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            gap: 1em;
+            overscroll-behavior-inline: contain;
+            scroll-snap-type: inline mandatory;
+            padding-block: 1em;
+            width: 88%;
+            margin: auto;
+            scrollbar-width: none;
+            .item {
+                min-width: 100%;
+                scroll-snap-align: center;
+                // outline: 2px solid red;
+                display: flex;
+                flex-direction: column;
+                gap: 0.8em;
+                .star {
+                    display: flex;
+                    // outline: 2px solid red;
+                    gap: 0.6em;
+                    justify-content: center;
+                }
+                .para {
+                    p {
+                        font-weight: 600;
+                        font-size: clamp(0.75rem, 1vw, 1rem);
+                    }
+                }
+                .name {
+                    p {
+                        font-weight: 600;
+                        font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+                        span {
+                            color: #c2171a;
+                            font-size: clamp(0.87rem, 1vw, 1rem);
+                        }
+                    }
+                }
+            }
+        }
+        .controller {
+            .radio {
+                input {
+                    accent-color: #a11e21;
+                    background: #a11e21;
+                    @include ab.screen-48 {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

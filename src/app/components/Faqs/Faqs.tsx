@@ -69,11 +69,12 @@ const Faqs = () => {
                                         className={style.accordion_content}
                                     >
                                         <p>
-                                            We recommend getting your engine
-                                            inspected and tuned up every 30,000
-                                            miles, or as recommended by your
-                                            vehicle manufacturer, to maintain
-                                            optimal performance and efficiency.
+                                            Yes, we offer comprehensive
+                                            multipoint vehicle inspections to
+                                            thoroughly assess the condition of
+                                            your vehicle and identify any
+                                            potential issues that may require
+                                            attention.
                                         </p>
                                     </Accordion.Content>
                                 </Accordion.Item>
@@ -98,11 +99,13 @@ const Faqs = () => {
                                         className={style.accordion_content}
                                     >
                                         <p>
-                                            We recommend getting your engine
-                                            inspected and tuned up every 30,000
-                                            miles, or as recommended by your
-                                            vehicle manufacturer, to maintain
-                                            optimal performance and efficiency.
+                                            Yes, we understand that unexpected
+                                            automotive repairs can put a strain
+                                            on your budget. That's why we offer
+                                            flexible financing options to help
+                                            you manage the cost of repairs
+                                            without compromising on quality or
+                                            safety."
                                         </p>
                                     </Accordion.Content>
                                 </Accordion.Item>
@@ -127,11 +130,9 @@ const Faqs = () => {
                                         className={style.accordion_content}
                                     >
                                         <p>
-                                            We recommend getting your engine
-                                            inspected and tuned up every 30,000
-                                            miles, or as recommended by your
-                                            vehicle manufacturer, to maintain
-                                            optimal performance and efficiency.
+                                            Yes, we offer warranty coverage to
+                                            ensure your peace of mind regarding
+                                            our workmanship quality.
                                         </p>
                                     </Accordion.Content>
                                 </Accordion.Item>
