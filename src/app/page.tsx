@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Faqs from "./components/Faqs/Faqs";
 import { Reviews } from "./components/Reviews/Reviews";
 import Steps from "./components/Steps/Steps";
+
 const page = () => {
 	return (
 		<div className="group">
