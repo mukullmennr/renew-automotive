@@ -1,5 +1,3 @@
-"use client";
-
 import React from "react";
 import styles from "./steps.module.scss";
 import Container from "@/components/Container/Container";
