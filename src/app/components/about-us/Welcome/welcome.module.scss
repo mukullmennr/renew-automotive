@@ -1,0 +1,63 @@
+@use "../../../../styles/abstract/media-queries" as ab;
+.welcome {
+    padding-block: 1em;
+    @include ab.screen-48 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: clamp(1em, 3vw, 3em);
+    }
+    span {
+        color: var(--red);
+    }
+    .img {
+        img {
+            width: 100%;
+        }
+
+        @include ab.screen-48 {
+            // outline: 2px solid red;
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .content {
+        padding-block: 1em;
+        @include ab.screen-48 {
+            padding-block: 0.5em;
+        }
+        h2 {
+            font-size: clamp(2rem, 2.25vw, 2.25rem);
+        }
+        .para {
+            display: grid;
+            gap: 1em;
+            p {
+                font-size: clamp(0.75rem, 1vw, 1rem);
+            }
+        }
+    }
+}
+.our {
+    display: grid;
+    gap: 1em;
+    h4 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: clamp(0.75rem, 1vw, 1rem);
+    }
+    padding-bottom: 2em;
+    span {
+        color: var(--red);
+    }
+    @include ab.screen-48 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: clamp(1em, 2vw, 2em);
+    }
+    .item {
+        display: grid;
+        gap: 0.5em;
+    }
+}

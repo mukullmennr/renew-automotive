@@ -5,6 +5,16 @@ export const Reviews = () => {
     const parentRef = useRef<HTMLDivElement | null>(null);
     const innerRef = useRef<HTMLDivElement | null>(null);
     const [selectedRadio, setSelectedRadio] = useState<number>(0);
+    const handleRadioChange = (index: number) => {
+        setSelectedRadio(index);
+        // Scroll to the selected review
+        if (parentRef.current) {
+            parentRef.current.scrollTo({
+                left: index * parentRef.current.offsetWidth,
+                behavior: "smooth",
+            });
+        }
+    };
     useEffect(() => {
         const options = {
             root: parentRef.current,
@@ -205,34 +215,16 @@ export const Reviews = () => {
                         </div>
                         <div className={style.controller}>
                             <div className={style.radio}>
-                                <input
-                                    type="radio"
-                                    // id={`radio-${index}-0`}
-                                    // name={`contentRadio-${index}`}
-                                    checked={[0].includes(selectedRadio)}
-                                    onChange={() => {}}
-                                />
-                                <input
-                                    type="radio"
-                                    // id={`radio-${index}-1`}
-                                    // name={`contentRadio-${index}`}
-                                    checked={[1].includes(selectedRadio)}
-                                    onChange={() => {}}
-                                />
-                                <input
-                                    type="radio"
-                                    // id={`radio-${index}-2`}
-                                    // name={`contentRadio-${index}`}
-                                    checked={[2].includes(selectedRadio)}
-                                    onChange={() => {}}
-                                />
-                                <input
-                                    type="radio"
-                                    // id={`radio-${index}-2`}
-                                    // name={`contentRadio-${index}`}
-                                    checked={[3].includes(selectedRadio)}
-                                    onChange={() => {}}
-                                />
+                                {[0, 1, 2, 3].map((index) => (
+                                    <input
+                                        key={index}
+                                        type="radio"
+                                        checked={selectedRadio === index}
+                                        onChange={() =>
+                                            handleRadioChange(index)
+                                        }
+                                    />
+                                ))}
                             </div>
                             <div className={style.button}>
                                 <button onClick={handlePrevClick}>
