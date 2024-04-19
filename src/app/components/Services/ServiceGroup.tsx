@@ -87,7 +87,14 @@ const ServiceGroup = () => {
 					<p className={styles.overlay_text}>{text}</p>
 				</div>
 
-				<img src={image} alt="service showcase" />
+				<img
+					// width="864"
+					// height="350"
+					width="309"
+					height="125"
+					src={image}
+					alt="service showcase"
+				/>
 
 				<div className={styles.link}>
 					<Link href={link}>Know More</Link>

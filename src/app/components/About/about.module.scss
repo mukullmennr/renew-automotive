@@ -1,0 +1,351 @@
+@use "/src/styles/abstract" as ab;
+
+.about {
+	--tab-content-bg: #393939;
+	--result-text: #3d3d3d;
+	--grey-text: #d4d4d4;
+
+	display: grid;
+	gap: 2em;
+
+	.heading_container {
+		text-align: center;
+
+		display: grid;
+		place-items: center;
+		gap: 0.4em;
+	}
+
+	.tab {
+		.list {
+			display: flex;
+			justify-content: center;
+
+			width: calc(var(--vw) * 100);
+
+			.trigger {
+				--bg: var(--trigger);
+				--color: var(--grey);
+				--line: transparent;
+
+				width: min(calc(33 * var(--vw)), 14rem);
+
+				border: 0;
+				border-bottom: 0.25em solid var(--line);
+				background-color: transparent;
+
+				display: grid;
+				place-items: center;
+				gap: 1em;
+
+				text-align: center;
+
+				padding-block: 1.4em;
+
+				font-size: clamp(0.75rem, 1.25vi, 1rem);
+
+				font-weight: 600;
+				transition: border-color 300ms;
+
+				svg {
+					path {
+						transition: fill 300ms;
+					}
+				}
+
+				&[data-state="active"] {
+					--line: var(--accent-light);
+
+					svg {
+						path {
+							fill: var(--accent-light);
+						}
+					}
+				}
+			}
+
+			> :nth-child(2) {
+				position: relative;
+
+				&::before,
+				&::after {
+					--bg: #eef0f1;
+
+					position: absolute;
+					content: "";
+					background-color: var(--bg);
+
+					width: 2px;
+					height: 80%;
+				}
+				&::before {
+					left: 0;
+				}
+				&::after {
+					right: 0;
+				}
+			}
+		}
+
+		.advantage {
+			background-color: var(--tab-content-bg);
+			color: var(--white);
+
+			padding-block: clamp(5em, 8vw, 8em);
+			position: relative;
+			isolation: isolate;
+
+			&::before {
+				position: absolute;
+				content: "Our Advantages";
+
+				font-size: min(calc(12.5 * var(--vw)), 10rem);
+
+				font-weight: 600;
+
+				text-align: center;
+
+				color: var(--result-text);
+				z-index: -1;
+
+				bottom: 0;
+				left: 50%;
+				translate: -50% calc(-10 * var(--vw));
+				width: calc(100 * var(--vw));
+
+				line-height: 0;
+				translate: -50% -0.65em;
+			}
+
+			ul {
+				list-style-image: url("../../../../public/about/check.svg");
+				display: grid;
+				gap: 2em;
+
+				@include ab.screen-48 {
+					grid-template-columns: repeat(2, 1fr);
+					column-gap: 4em;
+				}
+
+				li {
+					h3 {
+						font-size: 1.25rem;
+					}
+
+					p {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+
+		.additional {
+			background-color: var(--tab-content-bg);
+			color: var(--white);
+
+			display: grid;
+			gap: 1em;
+
+			@include ab.screen-90 {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 0;
+			}
+
+			.image {
+				img {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.additional_content {
+				container-type: inline-size;
+
+				isolation: isolate;
+				position: relative;
+
+				&::before {
+					position: absolute;
+					content: "Additional Services";
+
+					font-size: 10cqw;
+
+					font-weight: 600;
+
+					text-align: center;
+
+					color: var(--result-text);
+					z-index: -1;
+
+					bottom: 0;
+					left: 50%;
+					width: 100cqw;
+
+					line-height: 0;
+					translate: -50% -0.65em;
+				}
+			}
+
+			.additional_container {
+				padding-block: 1em 3em;
+				padding-inline: 5%;
+
+				position: relative;
+				top: 50%;
+				translate: 0 -50%;
+
+				display: grid;
+				gap: 1em;
+
+				p,
+				li,
+				label {
+					font-size: clamp(0.75rem, 2cqw, 1rem);
+					font-weight: 600;
+				}
+
+				label {
+					color: var(--accent);
+				}
+
+				ul {
+					margin: 0;
+					padding-inline-start: 0.75em;
+
+					list-style-image: url("../../../../public/about/key.svg");
+
+					display: grid;
+					gap: 0.5em;
+
+					@include ab.container-45 {
+						column-gap: 1em;
+						grid-template-columns: repeat(2, 1fr);
+					}
+
+					> :nth-child(n + 6) {
+						display: none;
+
+						@include ab.container-45 {
+							display: list-item;
+						}
+					}
+				}
+
+				&:has(input:checked) {
+					ul {
+						column-gap: 1em;
+						grid-template-columns: repeat(2, 1fr);
+					}
+
+					li {
+						display: list-item;
+					}
+				}
+
+				.show_more {
+					@include ab.container-45 {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.about_tab {
+			background-color: var(--tab-content-bg);
+			color: var(--white);
+
+			display: grid;
+			gap: 1em;
+
+			@include ab.screen-90 {
+				grid-template-columns: repeat(2, 1fr);
+				gap: 0;
+			}
+
+			.image {
+				img {
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.about_content {
+				container-type: inline-size;
+
+				isolation: isolate;
+				position: relative;
+
+				&::before {
+					position: absolute;
+					content: "About Company";
+
+					font-size: 12.5cqw;
+
+					font-weight: 600;
+
+					text-align: center;
+
+					color: var(--result-text);
+					z-index: -1;
+
+					bottom: 0;
+					left: 50%;
+					width: 100cqw;
+
+					line-height: 0;
+					translate: -50% -0.65em;
+				}
+			}
+
+			.about_container {
+				padding-block: 1em 3em;
+				padding-inline: 5%;
+
+				position: relative;
+				top: 50%;
+				translate: 0 -50%;
+
+				display: grid;
+				gap: 2em;
+				text-align: center;
+
+				@include ab.container-45 {
+					text-align: left;
+				}
+
+				p {
+					font-size: clamp(0.75rem, 1.25vi, 1rem);
+					font-size: clamp(0.75rem, 2cqw, 1rem);
+					color: var(--grey-text);
+				}
+
+				h3 {
+					font-size: clamp(1rem, 1.5vi, 1.25rem);
+					font-size: clamp(1rem, 2.5cqw, 1.25rem);
+				}
+
+				.about_items {
+					display: grid;
+					gap: 3cqw;
+
+					@include ab.container-45 {
+						grid-template-columns: repeat(3, 1fr);
+						place-items: start;
+					}
+
+					div {
+						display: grid;
+						gap: 0.25em;
+						gap: 0.5cqh;
+
+						place-items: center;
+
+						@include ab.container-45 {
+							place-items: start;
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -26,14 +26,14 @@
 
 		text-align: center;
 
-		.heading {
-			font-size: clamp(2rem, 2.5vi, 2.25rem);
-		}
+		// .heading {
+		// 	font-size: clamp(2rem, 2.5vi, 2.25rem);
+		// }
 
-		.text {
-			font-size: clamp(0.75rem, 1.25vi, 1rem);
-			font-weight: 600;
-		}
+		// .text {
+		// 	font-size: clamp(0.75rem, 1.25vi, 1rem);
+		// 	font-weight: 600;
+		// }
 	}
 
 	.services_container {
@@ -144,6 +144,7 @@
 
 			img {
 				width: min(90%, 54em);
+				height: auto;
 
 				margin-inline: auto;
 			}
