@@ -42,6 +42,15 @@ export const Reviews = () => {
             observer.disconnect();
         };
     }, [parentRef.current]);
+    const handlePrevClick = () => {
+        if (!parentRef.current) return;
+        parentRef.current.scrollLeft -= 400;
+    };
+
+    const handleNextClick = () => {
+        if (!parentRef.current) return;
+        parentRef.current.scrollLeft += 400;
+    };
     return (
         <div>
             <div className={style.experience}>
@@ -83,136 +92,157 @@ export const Reviews = () => {
                     <img src="/review.png" alt="" />
                 </div>
                 <div className={style.content}>
-                    <div className={style.heading}>
-                        <h4>Customer Reviews</h4>
-                    </div>
-                    <div className={style.icon}>
-                        <img src="/review_icon.svg" />
-                    </div>
-                    <div className={style.review_container} ref={parentRef}>
-                        <div className={style.item}>
-                            <div className={style.star}>
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                            </div>
-                            <div className={style.para}>
-                                <p>
-                                    I would recommend Car Repair Service to
-                                    anyone without a doubt! Very professional
-                                    and reliable. The best customer service and
-                                    reasonable prices. My go to auto shop from
-                                    now on!!!
-                                </p>
-                            </div>
-                            <div className={style.name}>
-                                <p>
-                                    <span>– Jeffrey Holton,</span> Electrician
-                                </p>
+                    <div className={style.container}>
+                        <div className={style.heading}>
+                            <h4>Customer Reviews</h4>
+                            <div className={style.icon}>
+                                <img src="/review_icon.svg" />
                             </div>
                         </div>
-                        <div className={style.item}>
-                            <div className={style.star}>
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
+                        <div className={style.icon}>
+                            <img src="/review_icon.svg" />
+                        </div>
+                        <div className={style.review_container} ref={parentRef}>
+                            <div className={style.item}>
+                                <div className={style.star}>
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                </div>
+                                <div className={style.para}>
+                                    <p>
+                                        I would recommend Car Repair Service to
+                                        anyone without a doubt! Very
+                                        professional and reliable. The best
+                                        customer service and reasonable prices.
+                                        My go to auto shop from now on!!!
+                                    </p>
+                                </div>
+                                <div className={style.name}>
+                                    <p>
+                                        <span>– Jeffrey Holton,</span>{" "}
+                                        Electrician
+                                    </p>
+                                </div>
                             </div>
-                            <div className={style.para}>
-                                <p>
-                                    I would recommend Car Repair Service to
-                                    anyone without a doubt! Very professional
-                                    and reliable. The best customer service and
-                                    reasonable prices. My go to auto shop from
-                                    now on!!!
-                                </p>
+                            <div className={style.item}>
+                                <div className={style.star}>
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                </div>
+                                <div className={style.para}>
+                                    <p>
+                                        Absolutely stellar service!
+                                        Professionalism and reliability define
+                                        this company. Their customer service is
+                                        top-notch, and their prices are fair. My
+                                        definite go-to for all automobile needs.
+                                        Highly recommend without hesitation!
+                                    </p>
+                                </div>
+                                <div className={style.name}>
+                                    <p>
+                                        <span>– Jeffrey Holton,</span>{" "}
+                                        Electrician
+                                    </p>
+                                </div>
                             </div>
-                            <div className={style.name}>
-                                <p>
-                                    <span>– Jeffrey Holton,</span> Electrician
-                                </p>
+                            <div className={style.item}>
+                                <div className={style.star}>
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                </div>
+                                <div className={style.para}>
+                                    <p>
+                                        Exceptional service every time!
+                                        Trustworthy, reliable, and fair pricing.
+                                        This company goes above and beyond for
+                                        their customers. My number one choice
+                                        for all automotive needs. Highly
+                                        recommended!
+                                    </p>
+                                </div>
+                                <div className={style.name}>
+                                    <p>
+                                        <span>– Jeffrey Holton,</span>{" "}
+                                        Electrician
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={style.item}>
+                                <div className={style.star}>
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                    <img src="/star.svg" />
+                                </div>
+                                <div className={style.para}>
+                                    <p>
+                                        Consistently excellent service!
+                                        Professional, reliable, and fair pricing
+                                        make them stand out. Their commitment to
+                                        customer satisfaction is unmatched. A
+                                        trusted partner for all automotive
+                                        needs. Highly recommended!
+                                    </p>
+                                </div>
+                                <div className={style.name}>
+                                    <p>
+                                        <span>– Jeffrey Holton,</span>{" "}
+                                        Electrician
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div className={style.item}>
-                            <div className={style.star}>
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
+                        <div className={style.controller}>
+                            <div className={style.radio}>
+                                <input
+                                    type="radio"
+                                    // id={`radio-${index}-0`}
+                                    // name={`contentRadio-${index}`}
+                                    checked={[0].includes(selectedRadio)}
+                                    onChange={() => {}}
+                                />
+                                <input
+                                    type="radio"
+                                    // id={`radio-${index}-1`}
+                                    // name={`contentRadio-${index}`}
+                                    checked={[1].includes(selectedRadio)}
+                                    onChange={() => {}}
+                                />
+                                <input
+                                    type="radio"
+                                    // id={`radio-${index}-2`}
+                                    // name={`contentRadio-${index}`}
+                                    checked={[2].includes(selectedRadio)}
+                                    onChange={() => {}}
+                                />
+                                <input
+                                    type="radio"
+                                    // id={`radio-${index}-2`}
+                                    // name={`contentRadio-${index}`}
+                                    checked={[3].includes(selectedRadio)}
+                                    onChange={() => {}}
+                                />
                             </div>
-                            <div className={style.para}>
-                                <p>
-                                    I would recommend Car Repair Service to
-                                    anyone without a doubt! Very professional
-                                    and reliable. The best customer service and
-                                    reasonable prices. My go to auto shop from
-                                    now on!!!
-                                </p>
+                            <div className={style.button}>
+                                <button onClick={handlePrevClick}>
+                                    {" "}
+                                    <img src="/arrow_left.svg" alt="<" />
+                                </button>
+                                <button onClick={handleNextClick}>
+                                    <img src="/arrow_right.svg" alt="." />
+                                </button>
                             </div>
-                            <div className={style.name}>
-                                <p>
-                                    <span>– Jeffrey Holton,</span> Electrician
-                                </p>
-                            </div>
-                        </div>
-                        <div className={style.item}>
-                            <div className={style.star}>
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                                <img src="/star.svg" />
-                            </div>
-                            <div className={style.para}>
-                                <p>
-                                    I would recommend Car Repair Service to
-                                    anyone without a doubt! Very professional
-                                    and reliable. The best customer service and
-                                    reasonable prices. My go to auto shop from
-                                    now on!!!
-                                </p>
-                            </div>
-                            <div className={style.name}>
-                                <p>
-                                    <span>– Jeffrey Holton,</span> Electrician
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.controller}>
-                        <div className={style.radio}>
-                            <input
-                                type="radio"
-                                // id={`radio-${index}-0`}
-                                // name={`contentRadio-${index}`}
-                                checked={[0].includes(selectedRadio)}
-                                onChange={() => {}}
-                            />
-                            <input
-                                type="radio"
-                                // id={`radio-${index}-1`}
-                                // name={`contentRadio-${index}`}
-                                checked={[1].includes(selectedRadio)}
-                                onChange={() => {}}
-                            />
-                            <input
-                                type="radio"
-                                // id={`radio-${index}-2`}
-                                // name={`contentRadio-${index}`}
-                                checked={[2].includes(selectedRadio)}
-                                onChange={() => {}}
-                            />
-                            <input
-                                type="radio"
-                                // id={`radio-${index}-2`}
-                                // name={`contentRadio-${index}`}
-                                checked={[3].includes(selectedRadio)}
-                                onChange={() => {}}
-                            />
                         </div>
                     </div>
                 </div>

@@ -8,11 +8,12 @@
     flex-direction: column;
     gap: 1.2em;
     padding-block: 2em;
+
     @include ab.screen-48 {
         flex-direction: row;
         justify-content: center;
         padding-block: 4em;
-        padding-bottom: 15em;
+        padding-bottom: clamp(8em, 15vw, 15em);
     }
     .content {
         display: grid;
@@ -24,7 +25,7 @@
         .num {
             // outline: 2px solid red;
             display: flex;
-            justify-content: end;
+            justify-content: flex-end;
             width: 100%;
             padding-right: 0.5em;
             border-right: 0.2em solid #a11e21;
@@ -49,82 +50,150 @@
     @include ab.screen-48 {
         width: min(90%, var(--max-width));
         margin-inline: auto;
-        outline: 2px solid red;
+        // outline: 2px solid red;
+        position: relative;
+        margin-top: -5em;
+    }
+    @include ab.screen-64 {
+        margin-top: -6em;
+    }
+    @include ab.screen-80 {
+        margin-top: -10em;
     }
     &_img {
         img {
             width: 100%;
             @include ab.screen-48 {
-                max-width: 25em;
+                width: clamp(28em, 50vw, 50em);
             }
         }
     }
     .content {
-        text-align: center;
-        position: relative;
-        padding-block: 2em;
-        .heading {
-            h4 {
-                font-size: clamp(2rem, 2.25vw, 2.25rem);
-            }
-        }
-        .icon {
+        @include ab.screen-48 {
             position: absolute;
-            top: -9%;
-            // outline: 2px solid red;
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            bottom: 0;
+            right: 0;
+            background-color: var(--white);
+            width: clamp(22em, 45vw, 45em);
         }
-        .review_container {
-            display: flex;
-            overflow-x: scroll;
-            overflow-y: hidden;
-            gap: 1em;
-            overscroll-behavior-inline: contain;
-            scroll-snap-type: inline mandatory;
-            padding-block: 1em;
-            width: 88%;
-            margin: auto;
-            scrollbar-width: none;
-            .item {
-                min-width: 100%;
-                scroll-snap-align: center;
-                // outline: 2px solid red;
-                display: flex;
-                flex-direction: column;
-                gap: 0.8em;
-                .star {
-                    display: flex;
-                    // outline: 2px solid red;
-                    gap: 0.6em;
-                    justify-content: center;
+        .container {
+            @include ab.screen-48 {
+                text-align: left;
+                padding-block: clamp(0.8em, 1.5vw, 1.5em);
+                position: static;
+            }
+            text-align: center;
+            position: relative;
+            padding-block: 2em;
+            .heading {
+                @include ab.screen-48 {
+                    position: relative;
                 }
-                .para {
-                    p {
-                        font-weight: 600;
-                        font-size: clamp(0.75rem, 1vw, 1rem);
+                h4 {
+                    font-size: clamp(1.5rem, 2.25vw, 2.25rem);
+                    @include ab.screen-48 {
+                        width: 88%;
+                        margin: auto;
+
+                        // outline: 2px solid red;
                     }
                 }
-                .name {
-                    p {
-                        font-weight: 600;
-                        font-size: clamp(0.6rem, 0.75vw, 0.75rem);
-                        span {
-                            color: #c2171a;
-                            font-size: clamp(0.87rem, 1vw, 1rem);
+                .icon {
+                    display: none;
+                    @include ab.screen-48 {
+                        display: flex;
+                        position: absolute;
+                        // outline: 2px solid rgb(25, 19, 196);
+                        top: 0;
+                        height: 100%;
+                        justify-content: flex-start;
+                        img {
+                            width: 2.5;
+                        }
+                        left: -1.3em;
+                        // width: 2em;
+                    }
+                }
+            }
+            .icon {
+                position: absolute;
+                top: -9%;
+                // outline: 2px solid red;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                @include ab.screen-48 {
+                    display: none;
+                }
+            }
+            .review_container {
+                display: flex;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                gap: 1em;
+                overscroll-behavior-inline: contain;
+                scroll-snap-type: inline mandatory;
+                padding-block: clamp(0.5em, 1vw, 1em);
+                width: 88%;
+                margin: auto;
+                scrollbar-width: none;
+                transition: all 200ms ease-in-out;
+                .item {
+                    min-width: 100%;
+                    scroll-snap-align: center;
+                    // outline: 2px solid red;
+                    display: flex;
+                    flex-direction: column;
+                    gap: clamp(0.5em, 0.8vw, 0.8em);
+                    .star {
+                        display: flex;
+                        // outline: 2px solid red;
+                        gap: 0.6em;
+                        justify-content: center;
+                        @include ab.screen-48 {
+                            justify-content: left;
+                        }
+                    }
+                    .para {
+                        p {
+                            font-weight: 600;
+                            font-size: clamp(0.7rem, 1vw, 1rem);
+                        }
+                    }
+                    .name {
+                        p {
+                            font-weight: 600;
+                            font-size: clamp(0.6rem, 0.75vw, 0.75rem);
+                            span {
+                                color: #c2171a;
+                                font-size: clamp(0.8rem, 1vw, 1rem);
+                            }
                         }
                     }
                 }
             }
-        }
-        .controller {
-            .radio {
-                input {
-                    accent-color: #a11e21;
-                    background: #a11e21;
+            .controller {
+                .radio {
+                    input {
+                        accent-color: #a11e21;
+                        background: #a11e21;
+                        @include ab.screen-48 {
+                            display: none;
+                        }
+                    }
+                }
+                .button {
+                    display: none;
                     @include ab.screen-48 {
-                        display: none;
+                        display: flex;
+                        width: 88%;
+                        margin: auto;
+                        gap: 1em;
+                        button {
+                            border: none;
+                            background: transparent;
+                            width: 2em;
+                        }
                     }
                 }
             }
