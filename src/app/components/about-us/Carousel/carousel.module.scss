@@ -1,0 +1,107 @@
+@use "../../../../styles/abstract/media-queries" as ab;
+.carousel {
+    .content {
+        text-align: center;
+        padding-block: 2em;
+        h2 {
+            font-size: 2rem;
+            span {
+                color: var(--red);
+            }
+        }
+        p {
+            font-size: clamp(0.75rem, 1vw, 1rem);
+            font-weight: 600;
+        }
+    }
+    &_content {
+        overflow-x: hidden;
+        .slides {
+            display: grid;
+            grid-template-columns: repeat(8, 100%);
+            @include ab.screen-40 {
+                grid-template-columns: repeat(8, 50%);
+                animation: web 20s infinite;
+            }
+            // overflow-x: scroll;
+            animation: mobile 20s infinite;
+            // outline: 2px solid red;
+            // &: hover {
+            //     animation-play-state: paused;
+            // }
+            // > * {
+            //     min-width: 100%;
+            //     scroll-snap-align: center;
+            // }
+            // overflow: auto hidden;
+            // scroll-snap-type: inline mandatory;
+            // margin: auto;
+            // scroll-behavior: smooth;
+            transition: all ease-in-out;
+            // &::-webkit-scrollbar {
+            //     display: none;
+            // }
+            // -ms-overflow-style: none; /* IE and Edge */
+            // scrollbar-width: none;
+            .slide {
+                // outline: 2px solid red;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                img {
+                    width: 100%;
+                }
+            }
+        }
+        @keyframes mobile {
+            0% {
+                transform: translateX(0);
+            }
+            12.5% {
+                transform: translateX(calc(-100% * 0));
+            }
+            25% {
+                transform: translateX(calc(-100% * 1));
+            }
+            37.5% {
+                transform: translateX(calc(-100% * 2));
+            }
+            50% {
+                transform: translateX(calc(-100% * 3));
+            }
+            62.5% {
+                transform: translateX(calc(-100% * 4));
+            }
+            75% {
+                transform: translateX(calc(-100% * 5));
+            }
+            87.5% {
+                transform: translateX(calc(-100% * 6));
+            }
+            100% {
+                transform: translateX(
+                    0
+                ); // Transition back to the first slide smoothly
+            }
+        }
+        @keyframes web {
+            0% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(calc(-100% * 0));
+            }
+            50% {
+                transform: translateX(calc(-100% * 1));
+            }
+            75% {
+                transform: translateX(calc(-100% * 2));
+            }
+            87.5% {
+                transform: translateX(calc(-100% * 3));
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+    }
+}

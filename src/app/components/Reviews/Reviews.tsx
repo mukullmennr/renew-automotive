@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import style from "./reviews.module.scss";
 export const Reviews = () => {
     const parentRef = useRef<HTMLDivElement | null>(null);
-    const innerRef = useRef<HTMLDivElement | null>(null);
+
     const [selectedRadio, setSelectedRadio] = useState<number>(0);
     const handleRadioChange = (index: number) => {
         setSelectedRadio(index);
@@ -32,7 +32,7 @@ export const Reviews = () => {
                     );
 
                     setSelectedRadio(index);
-                    console.log(index);
+                    // console.log(index);
                 }
             });
         };
