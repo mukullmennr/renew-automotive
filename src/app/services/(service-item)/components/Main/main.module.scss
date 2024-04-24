@@ -1,0 +1,63 @@
+@use "/src/styles/abstract" as ab;
+
+.main {
+	display: grid;
+	gap: 1.5rem;
+
+	grid-template-areas:
+		"heading"
+		"text"
+		"image"
+		"list";
+
+	@include ab.screen-64 {
+		grid-template-areas:
+			"image"
+			"heading"
+			"text"
+			"list";
+	}
+
+	.image {
+		grid-area: image;
+	}
+
+	.heading {
+		grid-area: heading;
+
+		font-size: clamp(2rem, 2.5vi, 2.25rem);
+		line-height: 2.5rem;
+
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.text {
+		grid-area: text;
+
+		font-size: clamp(0.75rem, 1.5vi, 1rem);
+
+		display: grid;
+		gap: 1rem;
+
+		h3 {
+			font-size: 1rem;
+			margin-block-end: 0.25rem;
+		}
+	}
+
+	.list {
+		grid-area: list;
+
+		font-size: clamp(0.75rem, 1.5vi, 1rem);
+		display: grid;
+		gap: 0.75rem;
+
+		ul {
+			padding-inline-start: 1rem;
+			margin: 0;
+
+			list-style-image: url("../../../../../../public/services-page/tick.svg");
+		}
+	}
+}
