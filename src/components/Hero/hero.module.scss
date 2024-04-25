@@ -14,7 +14,26 @@
 
 		display: grid;
 		place-content: center;
+		gap: 0.5em;
 
 		color: var(--white);
+	}
+
+	.bread_crumb {
+		display: flex;
+		gap: 0.5em;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			color: var(--white);
+			font-size: 0.75rem;
+			text-decoration-color: transparent;
+
+			&:hover,
+			&:focus-visible {
+				text-decoration-color: currentColor;
+			}
+		}
 	}
 }

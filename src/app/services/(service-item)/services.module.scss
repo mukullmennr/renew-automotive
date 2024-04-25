@@ -1,0 +1,28 @@
+@use "/src/styles/abstract" as ab;
+
+.container {
+	@include ab.screen-64 {
+		display: flex;
+		gap: clamp(2rem, 3vi, 2.75rem);
+
+		align-items: flex-start;
+
+		> :first-child {
+			width: 64%;
+		}
+
+		> :last-child {
+			width: 36%;
+		}
+	}
+
+	@include ab.screen-80 {
+		> :first-child {
+			width: 70%;
+		}
+
+		> :last-child {
+			width: 30%;
+		}
+	}
+}
