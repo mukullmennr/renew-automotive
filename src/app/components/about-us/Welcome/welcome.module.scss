@@ -57,7 +57,9 @@
         column-gap: clamp(1em, 2vw, 2em);
     }
     .item {
-        display: grid;
+        display: flex;
+        flex-direction: column;
         gap: 0.5em;
+        // outline: 2px solid red;
     }
 }
