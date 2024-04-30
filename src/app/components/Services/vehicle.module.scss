@@ -1,0 +1,49 @@
+.vehicle {
+    background-image: url("../../../../public/vehicle.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        align-items: center;
+        padding-block: 2em;
+        h3 {
+            color: var(--white);
+            font-size: clamp(1.5rem, 2vw, 2rem);
+            text-align: center;
+            span {
+                color: var(--red);
+            }
+        }
+        p {
+            color: var(--white);
+            font-size: clamp(0.7rem, 1vw, 1rem);
+            text-align: center;
+        }
+        a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+            font-weight: 500;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        button {
+            border: 0.1em solid var(--red);
+            background-color: transparent;
+            color: var(--white);
+            padding-block: 0.5em;
+            padding-inline: 2em;
+            cursor: pointer;
+            transition: all 200ms ease-in-out;
+            font-size: clamp(0.6rem, 1vw, 1rem);
+            font-weight: 500;
+            &:hover {
+                background-color: var(--red);
+            }
+        }
+    }
+}

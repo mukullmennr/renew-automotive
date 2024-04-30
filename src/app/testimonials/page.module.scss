@@ -12,6 +12,7 @@
 .review {
     overflow-x: hidden;
     position: relative;
+    margin-block: 2em;
     .slides {
         display: grid;
         grid-template-columns: repeat(3, 100%);
@@ -21,25 +22,19 @@
             animation-play-state: paused;
         }
         @keyframes web {
-            0% {
-                transform: translateX(0);
-                animation-delay: -20s;
-            }
-            25% {
-                transform: translateX(calc(-100% * 0));
-                animation-delay: 20s;
-            }
-            50% {
-                transform: translateX(calc(-100% * 1));
-                animation-delay: 40s;
-            }
-            75% {
-                transform: translateX(calc(-100% * 2));
-                animation-delay: 60s;
-            }
+            0%,
+            25%,
+            99%,
             100% {
                 transform: translateX(0);
-                animation-delay: 80s;
+            }
+            30%,
+            55% {
+                transform: translateX(calc(-100% * 1));
+            }
+            60%,
+            85% {
+                transform: translateX(calc(-100% * 2));
             }
         }
         .item {

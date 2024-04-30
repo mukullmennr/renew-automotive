@@ -6,20 +6,20 @@ import Carousel from "../components/about-us/Carousel/Carousel";
 import Common_hero from "@/components/common_hero/Common_hero";
 import { about } from "../../data/hero";
 const page = () => {
-	return (
-		<div
-			className="group"
-			style={{
-				marginBlockStart: "4em",
-			}}
-		>
-			<Common_hero data={about} />
-			<Welcome />
-			<Advantages />
-			<Carousel />
-			<Help />
-		</div>
-	);
+    return (
+        <div
+        // className="group"
+        // style={{
+        // 	marginBlockStart: "4em",
+        // }}
+        >
+            <Common_hero data={about} />
+            <Welcome />
+            <Advantages />
+            <Carousel />
+            <Help />
+        </div>
+    );
 };
 
 export default page;

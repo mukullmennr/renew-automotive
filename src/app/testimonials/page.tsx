@@ -10,9 +10,9 @@ const page = () => {
             <Common_hero data={testimonial} />
             <div className={style.review}>
                 <Container>
-                    <div className={style.testimonial}>
+                    {/* <div className={style.testimonial}>
                         <p>Testimonials</p>
-                    </div>
+                    </div> */}
                     <div className={style.slides}>
                         <div className={style.item}>
                             <div>

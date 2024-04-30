@@ -14,3 +14,7 @@ export const testimonial = {
     heading: ["Testimonials"],
     link: "/testimonials",
 };
+export const services = {
+    heading: ["Our Services"],
+    link: "/services",
+};
