@@ -1,6 +1,6 @@
 @use "../../../../styles/abstract/media-queries" as ab;
 .welcome {
-    padding-block: 1em;
+    padding-block: 2em;
     @include ab.screen-48 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

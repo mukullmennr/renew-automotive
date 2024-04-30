@@ -30,8 +30,8 @@ const links = [
 		name: "Services",
 	},
 	{
-		link: "/blog",
-		name: "Blog",
+		link: "/testimonials",
+		name: "Testimonials",
 	},
 	{
 		link: "/gallery",

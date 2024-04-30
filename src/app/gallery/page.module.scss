@@ -1,23 +1,94 @@
 @use "../../styles/abstract/media-queries" as ab;
-.nav {
+.container {
     width: min(65em, 90%);
     margin: auto;
-    ul {
+    padding-block: 2em;
+    .nav {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        list-style: none;
-        column-gap: clamp(0.5em, 1vw, 1em);
-        li {
-            text-align: center;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+
+        gap: clamp(0.5em, 1vw, 1em);
+        text-align: center;
+        > div {
             background-color: #f5f5f5;
-            padding-block: 1em;
-            label {
-                outline: 2px solid red;
-                cursor: pointer;
+            // padding-block: 1em;
+            input[type="radio"]:checked + label {
+                color: var(--red);
+                background-color: var(--white);
+                box-shadow: 0px 6.75px 39.375px 0px rgba(0, 0, 0, 0.07);
+                border-bottom: 0.2em solid var(--red);
             }
-            input[type="radio"]:checked ~ label {
-                color: #fff;
-                background-color: #000000;
+            label {
+                // outline: 2px solid red;
+                cursor: pointer;
+                display: block;
+                position: relative;
+                padding-block: 1em;
+                transition: all 200ms ease-in-out;
+                &:hover {
+                    color: var(--red);
+                    background-color: var(--white);
+                    box-shadow: 0px 6.75px 39.375px 0px rgba(0, 0, 0, 0.07);
+                    border-bottom: 0.2em solid var(--red);
+                }
+            }
+        }
+    }
+
+    .content {
+        padding-block: 2em;
+        // Add transition property
+        .item1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: clamp(0.5em, 1vw, 1em);
+            opacity: 1;
+            transition: all 200ms ease-in-out;
+            // outline: 2px solid red;
+            @include ab.screen-40 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            a {
+                width: 100%;
+                border: none;
+                padding: 0;
+                // aspect-ratio: 1/1;
+                height: 100%;
+                position: relative;
+                cursor: pointer;
+                transition: all 500ms ease-in;
+                &:hover {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+                // outline: 2px solid red;
+                cursor: pointer;
+                &::before {
+                    transition: all 500ms ease-in-out;
+                    opacity: 0;
+                    content: "";
+                    background-image: url("../../../public/gallery/gallery_icon.svg");
+                    background-repeat: no-repeat;
+                    background-size: clamp(1.5em, 2vw, 2em);
+                    background-position: 20% 80%;
+                    position: absolute;
+                    background-color: var(--red);
+                    width: clamp(5em, 8vw, 8em);
+                    aspect-ratio: 1/1;
+                    bottom: 0;
+                    left: 0;
+                    // outline: 2px solid red;
+                    z-index: 2;
+                    clip-path: polygon(0 0, 0 100%, 100% 100%);
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 1;
+                // outline: 2px solid red;
             }
         }
     }

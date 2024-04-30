@@ -1,0 +1,37 @@
+@use "/src/styles/abstract" as ab;
+
+.hero {
+    min-height: 10em;
+
+    background-image: url(../../../public/common_hero.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    .text {
+        display: grid;
+        place-content: center;
+        gap: 0.5em;
+        color: var(--white);
+        // outline: 2px solid red;
+    }
+
+    .bread_crumb {
+        display: flex;
+        gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: var(--white);
+            font-size: 0.75rem;
+            text-decoration-color: transparent;
+
+            &:hover,
+            &:focus-visible {
+                text-decoration-color: currentColor;
+            }
+        }
+    }
+}
