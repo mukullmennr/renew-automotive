@@ -1,0 +1,103 @@
+@use "../../styles/abstract/media-queries" as ab;
+.contact {
+    display: grid;
+
+    grid-template-rows: repeat(3, 1fr);
+
+    // outline: 2px solid red;
+    margin-block: 3em;
+    @include ab.screen-40 {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+    .img {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        // outline: 2px solid red;
+        @include ab.screen-40 {
+            grid-column: 1/2;
+
+            // width: 100%;
+        }
+        background-image: url("../../../public/contact_us.png");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .form {
+        grid-row: 2/4;
+        grid-column: 1/2;
+        // outline: 2px solid red;
+
+        padding-block: 1.5em;
+        padding-inline: 0;
+        @include ab.screen-40 {
+            grid-column: 2/4;
+            grid-row: 1/2;
+            padding-inline: clamp(1em, 1.5vw, 1.5em);
+            box-shadow: 0px 5.625px 32.813px 0px rgba(0, 0, 0, 0.07);
+            // outline: 2px solid red;
+        }
+        .head {
+            h2 {
+                font-size: clamp(2rem, 3vw, 3rem);
+            }
+            p {
+                font-size: clamp(0.75rem, 1vw, 1rem);
+            }
+        }
+        .input {
+            // outline: 2px solid red;
+            padding-block: 1em;
+            display: grid;
+            row-gap: clamp(0.5em, 1vw, 1em);
+            input {
+                background-color: #f7f7f7;
+                border: none;
+                font-size: clamp(0.7rem, 1vw, 1rem);
+                // color: #a8a8a8;
+                padding-block: 0.8em;
+                padding-inline: 1em;
+                &::placeholder {
+                    color: #a8a8a8;
+                    opacity: 1; /* Firefox */
+                }
+
+                &::-ms-input-placeholder {
+                    /* Edge 12 -18 */
+                    color: #a8a8a8;
+                }
+            }
+            select {
+                background-color: #f7f7f7;
+                border: none;
+                font-size: clamp(0.7rem, 1vw, 1rem);
+                padding-block: 0.8em;
+                padding-inline: 1em;
+                option[value=""][disabled] {
+                    display: none;
+                }
+            }
+
+            div {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                column-gap: clamp(0.5em, 1vw, 1em);
+            }
+            button {
+                width: clamp(7em, 10vw, 10em);
+                font-size: clamp(0.7rem, 1vw, 1rem);
+                text-align: center;
+                background-color: var(--white);
+                border: 0.1em solid black;
+                padding-block: 0.5em;
+                margin-top: 1.5em;
+                transition: all 200ms ease-in-out;
+                &:hover {
+                    background-color: black;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+}
