@@ -1,0 +1,53 @@
+@use "/src/styles/abstract" as ab;
+
+.image {
+	--_w: calc(var(--vw) * 100);
+
+	width: var(--_w);
+
+	.images {
+		width: 100%;
+		overflow-x: hidden;
+
+		.images_container {
+			// set from js
+			// --_imageCount: 8;
+			--_displayCount: 2;
+			--_imageWidth: calc(var(--vw) * 100 / var(--_displayCount));
+
+			// translate: calc(-3840px + 1920px);
+			translate: var(--_tx, 0);
+			transition: translate 200ms ease-in-out;
+
+			// transition: translate 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+			display: grid;
+			gap: 0;
+
+			grid-template-columns: repeat(
+				var(--_imageCount),
+				var(--_imageWidth)
+			);
+			grid-template-rows: min-content;
+
+			@include ab.screen-40 {
+				--_displayCount: 3;
+			}
+
+			@include ab.screen-64 {
+				--_displayCount: 4;
+			}
+
+			div {
+				img {
+					width: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
+
+	.images_control {
+		outline: 2px solid lightgreen;
+	}
+}
