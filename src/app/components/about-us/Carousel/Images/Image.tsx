@@ -51,6 +51,8 @@ const Image = () => {
 	const [imageContainerWidth, setImageContainerWidth] = useState(0);
 
 	const imageContainerRef = useRef<HTMLDivElement | null>(null);
+	const [click, setClick] = useState(false);
+	const [active, setActive] = useState(0);
 
 	const countRef = useRef(0);
 
@@ -109,39 +111,58 @@ const Image = () => {
 		countRef.current++;
 	};
 
+	const intervalFunc = () => {
+		updateCounter();
+
+		let tempImageLength = images ? images.length : 0;
+		let initWidth = 100 * vw;
+		let left = tempImageLength - imageDisplayCount;
+
+		if (countRef.current > left) countRef.current = 0;
+
+		let maxTranslate = imageContainerWidth - initWidth;
+		let increaseTranslate = initWidth / imageDisplayCount;
+
+		let increase = increaseTranslate * countRef.current;
+
+		if (increase > maxTranslate) {
+			countRef.current = 0;
+			increase = 0;
+		}
+
+		increase *= -1;
+		setActive(countRef.current);
+		imageContainerRef.current?.style.setProperty("--_tx", `${increase}px`);
+	};
+
 	useEffect(() => {
-		const interval = setInterval(() => {
-			updateCounter();
-
-			let tempImageLength = images ? images.length : 0;
-			let initWidth = 100 * vw;
-			let left = tempImageLength - imageDisplayCount;
-
-			if (countRef.current > left) countRef.current = 0;
-
-			let maxTranslate = imageContainerWidth - initWidth;
-			let increaseTranslate = initWidth / imageDisplayCount;
-
-			let increase = increaseTranslate * countRef.current;
-
-			if (increase > maxTranslate) {
-				countRef.current = 0;
-				increase = 0;
-			}
-
-			// console.log(countRef.current);
-			// console.info(increaseTranslate);
-
-			increase *= -1;
-			// console.log(increase);
-			imageContainerRef.current?.style.setProperty(
-				"--_tx",
-				`${increase}px`
-			);
-		}, 3000);
+		const interval = setInterval(intervalFunc, 3000);
 
 		return () => clearInterval(interval);
-	}, [images, imageDisplayCount, imageContainerWidth]);
+	}, [images, imageDisplayCount, imageContainerWidth, click]);
+
+	const handleImageControl = (ind: number) => {
+		countRef.current = ind - 1;
+		intervalFunc();
+		setClick((prev) => !prev);
+	};
+
+	const imageControls = () => {
+		let buttons = [];
+
+		for (let i = 0; i < imageControlCount; i++) {
+			buttons.push(
+				<input
+					type="radio"
+					key={`button-${i}`}
+					onClick={() => handleImageControl(i)}
+					checked={active == i ? true : false}
+				/>
+			);
+		}
+
+		return buttons;
+	};
 
 	return (
 		<div className={styles.image}>
@@ -159,7 +180,7 @@ const Image = () => {
 					})}
 				</div>
 			</div>
-			<div className={styles.images_control}></div>
+			<div className={styles.images_control}>{imageControls()}</div>
 		</div>
 	);
 };
