@@ -1,9 +1,11 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import style from "./faqs.module.scss";
 import * as Accordion from "@radix-ui/react-accordion";
 import Container from "../../../components/Container/Container";
+import Appointments from "@/components/Appointment/Appointments";
 const Faqs = () => {
+    const [showModal, setShowModal] = useState(false);
     return (
         <div>
             <Container>
@@ -143,10 +145,17 @@ const Faqs = () => {
                         {/* <img src="/faq.png" alt="" /> */}
                         <div>
                             <h3>Diagnostics, Repairs & Servicing</h3>
-                            <button>Book an Appointment</button>
+                            <button onClick={() => setShowModal(true)}>
+                                Book an Appointment
+                            </button>
                         </div>
                     </div>
                 </div>
+                {showModal && (
+                    <Appointments
+                        onClose={() => setShowModal(false)}
+                    ></Appointments>
+                )}
             </Container>
         </div>
     );

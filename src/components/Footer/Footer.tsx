@@ -7,6 +7,8 @@ import {
     faXTwitter,
     faLinkedinIn,
     faWhatsapp,
+    faYoutube,
+    faTiktok,
 } from "@fortawesome/free-brands-svg-icons";
 import Container from "../Container/Container";
 const Footer = () => {
@@ -40,51 +42,84 @@ const Footer = () => {
                                 <p>Oakwood, GA 30566</p>
                             </div>
                             <div>
-                                <div>
-                                    <p>Mon-Fri</p>
-                                    <p>08:30 am - 05:30 pm</p>
-                                </div>
-                                <div>
-                                    <p>Saturday</p>
-                                    <p>08:30 am - noon (drop-off only)</p>
-                                </div>
-                                <div>
-                                    <p>Sunday</p>
-                                    <p>Closed </p>
-                                </div>
+                                <table>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>Mon-Fri</p>
+                                            </td>
+                                            <td>
+                                                <p>08:30 am - 05:30 pm</p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Saturday</p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    08:30 am - noon (drop-off
+                                                    only)
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>Sunday</p>
+                                            </td>
+                                            <td>
+                                                <p>Closed</p>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                         <div className={styles.nav}>
                             <h4>Navigation</h4>
                             <div>
                                 <div>
-                                    <Link href="">Home</Link>
-                                    <Link href="">About Us</Link>
-                                    <Link href="">Services</Link>
+                                    <Link href="/">Home</Link>
+                                    <Link href="/about-us">About Us</Link>
+                                    <Link href="/services">Services</Link>
                                     <Link href="">Privacy Policy</Link>
                                 </div>
                                 <div>
-                                    <Link href="">Gallery</Link>
-                                    <Link href="">Contact Us</Link>
-                                    <Link href="">Blog</Link>
+                                    <Link href="/gallery">Gallery</Link>
+                                    <Link href="/contact-us">Contact Us</Link>
+                                    <Link href="/reviews">Reviews</Link>
                                     <Link href="">Disclaimer</Link>
                                 </div>
                             </div>
                         </div>
                         <div className={styles.get_in_touch}>
-                            <h4>Get in Touch</h4>
+                            <h4>Our Socials</h4>
                             <div>
-                                <Link href="" className={styles.facebook}>
+                                <Link
+                                    href="https://www.facebook.com/RenewAutomotiveServices/"
+                                    className={styles.facebook}
+                                >
                                     <FontAwesomeIcon icon={faFacebookF} />
                                 </Link>
-                                <Link href="" className={styles.twitter}>
-                                    <FontAwesomeIcon icon={faXTwitter} />
+                                {/* <Link href="" className={styles.twitter}>
                                 </Link>
                                 <Link href="" className={styles.linkedin}>
                                     <FontAwesomeIcon icon={faLinkedinIn} />
                                 </Link>
                                 <Link href="" className={styles.whatsapp}>
                                     <FontAwesomeIcon icon={faWhatsapp} />
+                                </Link> */}
+                                <Link
+                                    href="https://www.youtube.com/channel/UCSCtkZ-hn8HrTNrXPLGQ46Q"
+                                    className={styles.youtube}
+                                >
+                                    <FontAwesomeIcon icon={faYoutube} />
+                                </Link>
+                                <Link
+                                    href="https://www.tiktok.com/@renew_motorsports?_t=8lzBPLVrkKo&_r=1"
+                                    className={styles.twitter}
+                                >
+                                    <FontAwesomeIcon icon={faTiktok} />
                                 </Link>
                             </div>
                         </div>

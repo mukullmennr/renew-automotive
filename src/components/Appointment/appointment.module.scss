@@ -1,0 +1,187 @@
+@use "/src/styles/abstract" as ab;
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .modal {
+        overflow-y: auto;
+        max-height: 95vh;
+        position: relative;
+        background: white;
+        > div {
+            width: min(90%, var(--max-width));
+            margin-inline: auto;
+            padding-block: 2.2em;
+            .cross {
+                position: absolute;
+                top: 0;
+                right: 0;
+                clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+
+                button {
+                    border: none;
+                    color: var(--white);
+                    padding-block: 0.5em;
+                    padding-inline: 1em;
+                    display: flex;
+                    justify-content: center;
+                    gap: 0.4em;
+                    // outline: 2px solid red;
+                    width: clamp(4em, 10vw, 10em);
+                    cursor: pointer;
+                    background-color: var(--grey-text);
+                    @include ab.screen-40 {
+                        width: clamp(6em, 10vw, 10em);
+                    }
+                    &:hover {
+                        background-color: black;
+                    }
+                    span {
+                        display: none;
+
+                        @include ab.screen-40 {
+                            display: inline;
+                        }
+                    }
+                }
+            }
+            text-align: left;
+            .content {
+                .heading {
+                    h2 {
+                        color: black;
+                        font-size: clamp(1.5rem, 2.25vw, 2.25rem);
+                        span {
+                            color: var(--red);
+                        }
+                    }
+                    p {
+                        color: black;
+                        font-size: clamp(0.7rem, 1vw, 1em);
+                        font-weight: 400;
+                    }
+                }
+                .input {
+                    margin-block: 1em;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.8em;
+                    @include ab.screen-40 {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.7em;
+                        .input_head {
+                            h3 {
+                                color: black;
+                                font-size: clamp(1rem, 1.5vw, 1.5rem);
+                            }
+                        }
+
+                        .input_content {
+                            display: grid;
+                            gap: 1em;
+                            input {
+                                width: 100%;
+                                height: 3em;
+                                font-size: clamp(0.75em, 1vw, 1em);
+                                background-color: #f7f7f7;
+                                border: none;
+                                padding-block: 0.8em;
+                                padding-inline: 1em;
+                                &::placeholder {
+                                    color: #a8a8a8;
+                                    opacity: 1; /* Firefox */
+                                }
+
+                                &::-ms-input-placeholder {
+                                    /* Edge 12 -18 */
+                                    color: #a8a8a8;
+                                }
+                            }
+                        }
+                    }
+
+                    // > :nth-child(3) {
+                    //     display: flex;
+                    //     flex-direction: column;
+                    //     gap: 0.7em;
+                    //     .input_head {
+                    //     }
+                    //     .input_content {
+                    //         display: flex;
+                    //         flex-direction: column;
+                    //         gap: 1em;
+                    //         input {
+                    //             width: 100%;
+                    //             font-size: clamp(0.75em, 1vw, 1em);
+                    //             background-color: #f7f7f7;
+                    //             border: none;
+                    //             padding-block: 0.8em;
+                    //             padding-inline: 1em;
+                    //             &::placeholder {
+                    //                 color: #a8a8a8;
+                    //                 opacity: 1; /* Firefox */
+                    //             }
+
+                    //             &::-ms-input-placeholder {
+                    //                 /* Edge 12 -18 */
+                    //                 color: #a8a8a8;
+                    //             }
+                    //         }
+                    //     }
+                    //     // input[type="time"] {
+                    //     //     background-color: rgb(228, 228, 228);
+                    //     //     border: 0.1em solid black;
+                    //     //     // border: none;
+                    //     //     // display: flex;
+                    //     // }
+
+                    //     // input[type="time"]:before {
+                    //     //     content: "Requested Time";
+                    //     //     // outline: 2px solid red;
+                    //     //     display: inline-block;
+                    //     //     vertical-align: middle;
+                    //     //     // font-size: clamp(0.75em, 1vw, 1em);
+                    //     //     color: var(--grey-text);
+                    //     //     position: absolute;
+                    //     //     background-color: rgb(228, 228, 228);
+                    //     // }
+
+                    //     // input[type="time"]:focus:before {
+                    //     //     width: 0;
+                    //     //     content: "";
+                    //     // }
+                    // }
+                }
+                .button {
+                    button {
+                        background-color: transparent;
+                        border: 0.15em solid black;
+                        width: clamp(7em, 9.2vw, 9.2em);
+                        cursor: pointer;
+                        font-weight: 500;
+                        font-size: clamp(0.75rem, 1vw, 1em);
+                        padding-block: 0.5em;
+                        transition: all 200ms ease-in-out;
+                        &:hover {
+                            color: var(--white);
+                            background-color: black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

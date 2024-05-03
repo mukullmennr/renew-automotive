@@ -1,13 +1,13 @@
 import React from "react";
 import style from "./page.module.scss";
 import Common_hero from "@/components/common_hero/Common_hero";
-import { testimonial } from "../../data/hero";
+import { reviews } from "../../data/hero";
 import Container from "@/components/Container/Container";
 import Script from "next/script";
 const page = () => {
     return (
         <div>
-            <Common_hero data={testimonial} />
+            <Common_hero data={reviews} />
             <div className={style.review}>
                 <Container>
                     {/* <div className={style.testimonial}>

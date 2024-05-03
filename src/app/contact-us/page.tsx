@@ -1,10 +1,11 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Common_hero from "@/components/common_hero/Common_hero";
 import { contact } from "../../data/hero";
 import Container from "@/components/Container/Container";
 import Line from "@/components/SVG/Line";
 import style from "./page.module.scss";
+
 const page = () => {
     const getYear = () => {
         const currentYear = new Date().getFullYear();
@@ -22,6 +23,31 @@ const page = () => {
 
         return options;
     };
+
+    const handleSubmit = async (e: { preventDefault: () => void }) => {
+        e.preventDefault();
+        const form = document.querySelector(
+            `.${style.input}`
+        ) as HTMLFormElement;
+        const firstNameInput = form.querySelector(
+            'input[name="First_Name"]'
+        ) as HTMLInputElement;
+        const lastNameInput = form.querySelector(
+            'input[name="Last_Name"]'
+        ) as HTMLInputElement;
+        const name = `${firstNameInput.value} ${lastNameInput.value}`;
+
+        form?.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            data["name"] = name;
+            delete data["First_Name"];
+            delete data["Last_Name"];
+            console.log(data);
+        });
+    };
+
     return (
         <div>
             <Common_hero data={contact} />
@@ -37,18 +63,40 @@ const page = () => {
                             </p>
                         </div>
                         <Line />
-                        <div className={style.input}>
-                            <div>
-                                <input type="text" placeholder="First Name" />
-                                <input type="text" placeholder="Last Name" />
-                            </div>
-                            <input type="text" placeholder="Email " />
+                        <form className={style.input} onSubmit={handleSubmit}>
                             <div>
                                 <input
-                                    type="number"
-                                    placeholder="Phone Number"
+                                    name="First_Name"
+                                    type="text"
+                                    placeholder="First Name"
+                                    required
                                 />
-                                <select id="date-dropdown" defaultValue="">
+                                <input
+                                    name="Last_Name"
+                                    type="text"
+                                    placeholder="Last Name"
+                                    required
+                                />
+                            </div>
+                            <input
+                                name="email"
+                                type="text"
+                                placeholder="Email "
+                                required
+                            />
+                            <div>
+                                <input
+                                    name="phoneNumber"
+                                    type="text"
+                                    placeholder="Phone Number"
+                                    required
+                                />
+                                <select
+                                    name="vehicleYear"
+                                    id="date-dropdown"
+                                    defaultValue=""
+                                    required
+                                >
                                     <option
                                         className={style.option}
                                         value=""
@@ -60,18 +108,26 @@ const page = () => {
                                 </select>
                             </div>
                             <div>
-                                <input type="text" placeholder="Vehicle Make" />
                                 <input
+                                    name="vehicleMake"
+                                    type="text"
+                                    placeholder="Vehicle Make"
+                                    required
+                                />
+                                <input
+                                    name="vehicleModel"
                                     type="text"
                                     placeholder="Vehicle Model"
+                                    required
                                 />
                             </div>
                             <input
+                                name="vehicleRequirement"
                                 type="text"
                                 placeholder="What does your vehicle need?"
                             />
-                            <button>Contact Us</button>
-                        </div>
+                            <button type="submit">Contact Us</button>
+                        </form>
                     </div>
                 </div>
             </Container>

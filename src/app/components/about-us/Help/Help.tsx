@@ -1,7 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import style from "./help.module.scss";
 import Container from "@/components/Container/Container";
+import Appointments from "@/components/Appointment/Appointments";
+
 const Help = () => {
+    const [showModal, setShowModal] = useState(false);
     return (
         <div>
             <Container>
@@ -18,11 +22,19 @@ const Help = () => {
                     </div>
 
                     <a href="tel:(470 ) 384 9791">(470 ) 384 9791</a>
-                    <button>Appointment</button>
+                    <button onClick={() => setShowModal(true)}>
+                        Appointment
+                    </button>
+
                     <div className={style.watermark}>
                         <p>Schedule</p>
                     </div>
                 </div>
+                {showModal && (
+                    <Appointments
+                        onClose={() => setShowModal(false)}
+                    ></Appointments>
+                )}
             </Container>
         </div>
     );

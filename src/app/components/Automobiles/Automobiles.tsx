@@ -24,8 +24,8 @@ const Automobiles = () => {
                     <img src="/brand-02.png" alt="brand_logo" />
                     <img src="/brand-03.png" alt="brand_logo" />
                     <img src="/brand-04.png" alt="brand_logo" />
-                    <img src="/brand-05.png" alt="brand_logo" />
-                    <img src="/brand-06.png" alt="brand_logo" />
+                    {/* <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" /> */}
                     <img src="/brand-07.png" alt="brand_logo" />
                     <img src="/brand-08.png" alt="brand_logo" />
                     <img src="/brand-09.png" alt="brand_logo" />
@@ -36,8 +36,8 @@ const Automobiles = () => {
                     <img src="/brand-02.png" alt="brand_logo" />
                     <img src="/brand-03.png" alt="brand_logo" />
                     <img src="/brand-04.png" alt="brand_logo" />
-                    <img src="/brand-05.png" alt="brand_logo" />
-                    <img src="/brand-06.png" alt="brand_logo" />
+                    {/* <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" /> */}
                     <img src="/brand-07.png" alt="brand_logo" />
                     <img src="/brand-08.png" alt="brand_logo" />
                     <img src="/brand-09.png" alt="brand_logo" />
@@ -48,8 +48,8 @@ const Automobiles = () => {
                     <img src="/brand-02.png" alt="brand_logo" />
                     <img src="/brand-03.png" alt="brand_logo" />
                     <img src="/brand-04.png" alt="brand_logo" />
-                    <img src="/brand-05.png" alt="brand_logo" />
-                    <img src="/brand-06.png" alt="brand_logo" />
+                    {/* <img src="/brand-05.png" alt="brand_logo" />
+                    <img src="/brand-06.png" alt="brand_logo" /> */}
                     <img src="/brand-07.png" alt="brand_logo" />
                     <img src="/brand-08.png" alt="brand_logo" />
                     <img src="/brand-09.png" alt="brand_logo" />

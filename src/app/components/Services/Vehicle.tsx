@@ -14,7 +14,7 @@ const Vehicle = () => {
                         accident damage repair network
                     </p>
                     <a href="tel:(470 ) 384 9791">(470 ) 384 9791</a>
-                    <button>Need Help?</button>
+                    <a href="/contact-us">Need Help?</a>
                 </div>
             </Container>
         </div>

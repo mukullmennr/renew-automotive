@@ -122,9 +122,9 @@
                 height: 100%;
                 background-color: var(--red);
 
-                a {
+                button {
                     --bg: var(--accent);
-
+                    border: none;
                     display: inline-block;
                     padding-block: 0.8rem;
                     padding-inline: 2.5em 2em;
