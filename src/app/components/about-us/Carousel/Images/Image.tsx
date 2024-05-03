@@ -76,7 +76,7 @@ const Image = () => {
 				tempCount = 2;
 			}
 
-			setImageDisplayCount(tempCount);
+			if (tempCount != imageDisplayCount) setImageDisplayCount(tempCount);
 		}).observe(document.documentElement);
 	}, []);
 
@@ -98,8 +98,9 @@ const Image = () => {
 
 	useEffect(() => {
 		let tempImageLength = images ? images.length : 0;
-		let tempImageContainerWidth =
-			tempImageLength * ((100 * vw) / imageDisplayCount);
+		let tempImageContainerWidth = Math.round(
+			tempImageLength * ((100 * vw) / imageDisplayCount)
+		);
 
 		setImageContainerWidth(tempImageContainerWidth);
 	}, [images, vw, imageDisplayCount]);
@@ -123,10 +124,16 @@ const Image = () => {
 
 			let increase = increaseTranslate * countRef.current;
 
+			if (increase > maxTranslate) {
+				countRef.current = 0;
+				increase = 0;
+			}
+
 			// console.log(countRef.current);
 			// console.info(increaseTranslate);
 
 			increase *= -1;
+			// console.log(increase);
 			imageContainerRef.current?.style.setProperty(
 				"--_tx",
 				`${increase}px`
@@ -134,7 +141,7 @@ const Image = () => {
 		}, 3000);
 
 		return () => clearInterval(interval);
-	}, [images, imageDisplayCount]);
+	}, [images, imageDisplayCount, imageContainerWidth]);
 
 	return (
 		<div className={styles.image}>
