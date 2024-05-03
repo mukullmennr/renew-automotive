@@ -14,39 +14,39 @@ import Info from "@/components/SVG/Info";
 
 const data = [
     {
-        title: "Diagnostics",
+        title: "Emissions",
         text: "Our skilled technicians utilize advanced diagnostic tools to quickly identify any issues with your vehicle.",
-        image: "/services/diagnostic.webp",
-        link: "/services/air-conditioning-diagonistics",
+        image: "/services/emission.png",
+        link: "/services/emissions-repair-services",
     },
     {
         title: "Engine Repair",
         text: "Whether it's minor adjustments or major overhauls, we approach every repair with precision and care to ensure that your vehicle runs smoothly.",
-        image: "/services/engine-repair.webp",
+        image: "/services/engine-repair.png",
         link: "/services/engine-repair-services",
     },
     {
         title: "Oil / Lube / Filters",
         text: "Ensure the longevity of your vehicle with our expert oil, lube, and filter services, designed to keep your engine running smoothly.",
-        image: "/services/oil-lube.webp",
+        image: "/services/oil-lube.png",
         link: "/services/tune-up-and-maintenance",
     },
     {
-        title: "Tires",
-        text: "We ensure your vehicle maintains optimal grip, handling, and safety on the road, enhancing your driving experience in all conditions.",
-        image: "/services/tire.webp",
+        title: "Brakes",
+        text: "We ensure your vehicles brake pads, rotors, and brake lines are all in working order so you can drive with confidence.",
+        image: "/services/brakes.png",
         link: "/services/brake-repair-services",
     },
     {
-        title: "Transmission",
-        text: "Our expert technicians will thoroughly inspect and repair your transmission for optimal performance.",
-        image: "/services/transmission.webp",
+        title: "Suspension",
+        text: "Our expert technicians will thoroughly inspect and replace your suspension for optimal performance.",
+        image: "/services/suspension.png",
         link: "/services/suspension-and-steering",
     },
     {
         title: "Batteries",
         text: "We ensure reliable starting power and electrical system performance, so you can hit the road with confidence, knowing your vehicle is ready for any journey",
-        image: "/services/battery.webp",
+        image: "/services/battery.png",
         link: "/services/starters-alternators-battery-services",
     },
 ];
@@ -54,15 +54,15 @@ const data = [
 const ServiceGroup = () => {
     const getSVG = (title: string) => {
         switch (title) {
-            case "Diagnostics":
+            case "Emissions":
                 return <Diagnostic />;
             case "Engine Repair":
                 return <EngineRepair />;
             case "Oil / Lube / Filters":
                 return <OilLube />;
-            case "Tires":
+            case "Brakes":
                 return <Tire />;
-            case "Transmission":
+            case "Suspension":
                 return <Transmission />;
             case "Batteries":
                 return <Battries />;

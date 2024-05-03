@@ -18,12 +18,15 @@ const Hero = () => {
                         At Renew Automotive, we understand that your vehicle is
                         more than just a mode of transportation –That's why our
                         team of expert mechanics is dedicated to providing
-                        quality service that goes beyond just repairs. We're
-                        your partners in ensuring your car runs smoothly,
-                        efficiently, and safely for years to come. Whether you
-                        need a routine oil change, a major engine overhaul, or
-                        anything in between we've got you covered. Trust us for
-                        expert service and peace of mind on the road.
+                        quality service that goes beyond just repairs.
+                        <span>
+                            We're your partners in ensuring your car runs
+                            smoothly, efficiently, and safely for years to come.
+                            Whether you need a routine oil change, a major
+                            engine overhaul, or anything in between we've got
+                            you covered. Trust us for expert service and peace
+                            of mind on the road.
+                        </span>
                     </p>
 
                     <div className={styles.button}>

@@ -1,189 +1,190 @@
 @use "/src/styles/abstract" as ab;
 
 .services {
-	--heading: #3a3a3a;
-	--text: #292929;
+    --heading: #3a3a3a;
+    --text: #292929;
 
-	--trigger: #f5f5f5;
-	--trigger-active: #fbfbfb;
-	// --trigger-icon: #4d4d4d;
-	--trigger-icon-active: #000000;
+    --trigger: #f5f5f5;
+    --trigger-active: #fbfbfb;
+    // --trigger-icon: #4d4d4d;
+    --trigger-icon-active: #000000;
 
-	--result-bg: #616161;
-	--result-text: #6c6c6c;
-	--result-overlay: #3b3b3bb2;
-	// --result-overlay-text: #d4d4d4;
+    --result-bg: #616161;
+    --result-text: #6c6c6c;
+    --result-overlay: #3b3b3bb2;
+    // --result-overlay-text: #d4d4d4;
 
-	display: grid;
-	gap: 1.5em;
+    display: grid;
+    gap: 1.5em;
 
-	.heading_container {
-		display: grid;
-		place-items: center;
-		gap: 0.4em;
+    .heading_container {
+        display: grid;
+        place-items: center;
+        gap: 0.4em;
 
-		color: var(--grey);
+        color: var(--grey);
 
-		text-align: center;
+        text-align: center;
 
-		// .heading {
-		// 	font-size: clamp(2rem, 2.5vi, 2.25rem);
-		// }
+        // .heading {
+        // 	font-size: clamp(2rem, 2.5vi, 2.25rem);
+        // }
 
-		// .text {
-		// 	font-size: clamp(0.75rem, 1.25vi, 1rem);
-		// 	font-weight: 600;
-		// }
-	}
+        // .text {
+        // 	font-size: clamp(0.75rem, 1.25vi, 1rem);
+        // 	font-weight: 600;
+        // }
+    }
 
-	.services_container {
-		--service-count: 6;
+    .services_container {
+        --service-count: 6;
 
-		.tab_list {
-			// max-width: 100dvi;
-			max-width: calc(var(--vw) * 100);
+        .tab_list {
+            // max-width: 100dvi;
+            max-width: calc(var(--vw) * 100);
 
-			overflow-x: auto;
+            overflow-x: auto;
 
-			> div {
-				display: grid;
-				grid-template-columns: repeat(
-					var(--service-count),
-					minmax(10rem, 1fr)
-				);
-				gap: 0.1em;
-			}
+            > div {
+                display: grid;
+                grid-template-columns: repeat(
+                    var(--service-count),
+                    minmax(10rem, 1fr)
+                );
+                gap: 0.1em;
+            }
 
-			.trigger {
-				--bg: var(--trigger);
-				--color: var(--grey);
-				--line: transparent;
+            .trigger {
+                --bg: var(--trigger);
+                --color: var(--grey);
+                --line: transparent;
 
-				display: grid;
-				gap: 0.5em;
-				place-items: center;
+                display: grid;
+                gap: 0.5em;
+                place-items: center;
 
-				padding-block: 2.5em;
+                padding-block: 2.5em;
 
-				background-color: var(--bg);
-				color: var(--color);
+                background-color: var(--bg);
+                color: var(--color);
 
-				border: 0;
-				border-bottom: 0.25em solid var(--line);
+                border: 0;
+                border-bottom: 0.25em solid var(--line);
 
-				font-weight: 600;
-				font-size: clamp(0.75rem, 1.25vi, 1rem);
+                font-weight: 600;
+                font-size: clamp(0.75rem, 1.25vi, 1rem);
 
-				transition: background-color 300ms, color 300ms,
-					border-color 300ms;
+                transition: background-color 300ms, color 300ms,
+                    border-color 300ms;
 
-				svg {
-					path {
-						transition: fill 300ms;
-					}
-				}
+                svg {
+                    // outline: 2px solid red;
+                    path {
+                        transition: fill 300ms;
+                    }
+                }
 
-				&[data-state="active"] {
-					--bg: var(--trigger-active);
-					--color: var(--trigger-icon-active);
-					--line: var(--accent-light);
+                &[data-state="active"] {
+                    --bg: var(--trigger-active);
+                    --color: var(--trigger-icon-active);
+                    --line: var(--accent-light);
 
-					svg {
-						path {
-							fill: var(--trigger-icon-active);
-						}
-					}
-				}
-			}
-		}
+                    svg {
+                        path {
+                            fill: var(--trigger-icon-active);
+                        }
+                    }
+                }
+            }
+        }
 
-		.content {
-			background-color: var(--result-bg);
-			padding-block: clamp(0.75rem, 1.5vi, 1.25rem);
-			padding-inline: clamp(1rem, 1.75vi, 1.5rem);
+        .content {
+            background-color: var(--result-bg);
+            padding-block: clamp(0.75rem, 1.5vi, 1.25rem);
+            padding-inline: clamp(1rem, 1.75vi, 1.5rem);
 
-			position: relative;
-			isolation: isolate;
+            position: relative;
+            isolation: isolate;
 
-			&::before {
-				content: "Our Services";
-				position: absolute;
+            &::before {
+                content: "Our Services";
+                position: absolute;
 
-				font-size: min(16vi, 13rem);
-				font-weight: 600;
+                font-size: min(16vi, 13rem);
+                font-weight: 600;
 
-				color: var(--result-text);
-				z-index: -1;
+                color: var(--result-text);
+                z-index: -1;
 
-				translate: 0 min(8vi, 5.5rem);
+                translate: 0 min(8vi, 5.5rem);
 
-				line-height: 0;
-			}
+                line-height: 0;
+            }
 
-			.overlay {
-				backdrop-filter: blur(5px);
-				width: min(25em, 70%);
+            .overlay {
+                backdrop-filter: blur(5px);
+                width: min(25em, 70%);
 
-				background-color: var(--result-overlay);
+                background-color: var(--result-overlay);
 
-				color: var(--grey-text);
+                color: var(--grey-text);
 
-				font-size: clamp(0.75rem, 1.25vi, 1rem);
+                font-size: clamp(0.75rem, 1.25vi, 1rem);
 
-				padding-block: 0.8em;
-				padding-inline: 1em;
+                padding-block: 0.8em;
+                padding-inline: 1em;
 
-				display: flex;
-				gap: 1em;
+                display: flex;
+                gap: 1em;
 
-				svg {
-					align-self: flex-start;
-					width: 2.5rem;
-				}
-			}
+                svg {
+                    align-self: flex-start;
+                    width: 2.5rem;
+                }
+            }
 
-			img {
-				width: min(90%, 54em);
-				height: auto;
+            img {
+                width: min(90%, 54em);
+                height: auto;
 
-				margin-inline: auto;
-			}
+                margin-inline: auto;
+            }
 
-			.link {
-				margin-block-start: 1rem;
-				text-align: center;
+            .link {
+                margin-block-start: 1rem;
+                text-align: center;
 
-				a {
-					--bg: transparent;
-					--color: var(--white);
-					font-size: clamp(0.75rem, 1.25vi, 1rem);
-					text-decoration: none;
+                a {
+                    --bg: transparent;
+                    --color: var(--white);
+                    font-size: clamp(0.75rem, 1.25vi, 1rem);
+                    text-decoration: none;
 
-					color: var(--color);
-					background-color: var(--bg);
-					display: inline-block;
+                    color: var(--color);
+                    background-color: var(--bg);
+                    display: inline-block;
 
-					outline: 0.15em solid var(--white);
+                    outline: 0.15em solid var(--white);
 
-					padding-block: 0.5em;
-					padding-inline: 1.5em;
+                    padding-block: 0.5em;
+                    padding-inline: 1.5em;
 
-					font-weight: 500;
+                    font-weight: 500;
 
-					transition: background-color 300ms, color 300ms;
+                    transition: background-color 300ms, color 300ms;
 
-					&:focus,
-					&:hover {
-						--bg: var(--white);
-						--color: var(--accent);
-					}
-				}
+                    &:focus,
+                    &:hover {
+                        --bg: var(--white);
+                        --color: var(--accent);
+                    }
+                }
 
-				@include ab.landscape {
-					text-align: right;
-					margin-block-start: 0;
-				}
-			}
-		}
-	}
+                @include ab.landscape {
+                    text-align: right;
+                    margin-block-start: 0;
+                }
+            }
+        }
+    }
 }
