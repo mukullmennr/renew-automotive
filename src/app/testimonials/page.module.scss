@@ -1,36 +1,72 @@
 .testimonial {
+    position: absolute;
+    // outline: 2px solid red;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     font-size: clamp(3.2rem, 8vw, 8.75rem);
     text-align: center;
     color: rgba(168, 168, 168, 0.2);
     font-weight: 600;
 }
 .review {
-    .item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        > :nth-child(1) {
-            padding-block: 1em;
-            img {
-                width: clamp(7em, 10vw, 10em);
-                aspect-ratio: 1/1;
+    overflow-x: hidden;
+    position: relative;
+    margin-block: 2em;
+    .slides {
+        display: grid;
+        grid-template-columns: repeat(3, 100%);
+        animation: web 25s infinite;
+
+        &:hover {
+            animation-play-state: paused;
+        }
+        @keyframes web {
+            0%,
+            25%,
+            99%,
+            100% {
+                transform: translateX(0);
+            }
+            30%,
+            55% {
+                transform: translateX(calc(-100% * 1));
+            }
+            60%,
+            85% {
+                transform: translateX(calc(-100% * 2));
             }
         }
-        > :nth-child(2) {
-            // outline: 2px solid red;
-            position: relative;
-            right: 4em;
-            width: clamp(1.5em, 2.5vw, 2.5em);
-        }
-        span {
-            color: var(--red);
-            font-weight: 600;
-        }
-        p {
-            font-size: clamp(0.7rem, 1vw, 1rem);
-            width: clamp(25em, 36vw, 36em);
-            padding-block: 1em;
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            > :nth-child(1) {
+                padding-block: 1em;
+                img {
+                    width: clamp(7em, 10vw, 10em);
+                    aspect-ratio: 1/1;
+                }
+            }
+            > :nth-child(2) {
+                // outline: 2px solid red;
+                position: relative;
+                right: 4em;
+                width: clamp(1.5em, 2.5vw, 2.5em);
+            }
+            span {
+                color: var(--red);
+                font-weight: 600;
+            }
+            p {
+                font-size: clamp(0.7rem, 1vw, 1rem);
+                width: clamp(25em, 36vw, 36em);
+                padding-block: 1em;
+            }
         }
     }
+}
+.google_review {
+    overflow: hidden;
 }
