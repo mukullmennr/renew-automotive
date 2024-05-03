@@ -49,5 +49,46 @@
 
 	.images_control {
 		text-align: center;
+		margin-block-start: 1rem;
+
+		button {
+			--bg: #c1c1c1;
+			--w: 0.5rem;
+
+			cursor: pointer;
+			background: transparent;
+
+			display: inline-flex;
+			border: 0;
+			padding: 0;
+
+			margin-inline: 0.75em;
+
+			span {
+				--w: 0.75rem;
+
+				display: inline-block;
+
+				width: var(--w);
+				height: 0.75rem;
+
+				align-items: center;
+
+				background-color: var(--bg);
+
+				border-radius: 50%;
+
+				transition: width 200ms, border-radius 200ms;
+			}
+
+			&.active {
+				--bg: var(--accent);
+
+				span {
+					--w: 2rem;
+					border-radius: 10px;
+				}
+			}
+		}
 	}
 }

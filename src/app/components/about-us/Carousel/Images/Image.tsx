@@ -152,12 +152,14 @@ const Image = () => {
 
 		for (let i = 0; i < imageControlCount; i++) {
 			buttons.push(
-				<input
-					type="radio"
+				<button
+					aria-label={`image-${i + imageDisplayCount}`}
 					key={`button-${i}`}
 					onClick={() => handleImageControl(i)}
-					checked={active == i ? true : false}
-				/>
+					className={`${active == i ? styles.active : ""}`}
+				>
+					<span></span>
+				</button>
 			);
 		}
 
