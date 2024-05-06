@@ -82,13 +82,15 @@ const Footer = () => {
                                     <Link href="/">Home</Link>
                                     <Link href="/about-us">About Us</Link>
                                     <Link href="/services">Services</Link>
-                                    <Link href="">Privacy Policy</Link>
+                                    <Link href="/privacy-policy">
+                                        Privacy Policy
+                                    </Link>
                                 </div>
                                 <div>
                                     <Link href="/gallery">Gallery</Link>
                                     <Link href="/contact-us">Contact Us</Link>
                                     <Link href="/reviews">Reviews</Link>
-                                    <Link href="">Disclaimer</Link>
+                                    <Link href="/disclaimer">Disclaimer</Link>
                                 </div>
                             </div>
                         </div>

@@ -16,7 +16,7 @@ type Data = {
     vehicleRequirement?: string;
 };
 
-const page = () => {
+const Page = () => {
     const [userInput, setUserInputs] = useState({
         firstName: "",
         lastName: "",
@@ -130,7 +130,7 @@ const page = () => {
                             <h2>Get in Touch with Renew Automotive</h2>
                             <p>
                                 Need help or have a question? Fill out the form
-                                below, and we'll reply promptly.
+                                below, and we&apos;ll reply promptly.
                             </p>
                         </div>
                         <Line />
@@ -226,4 +226,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

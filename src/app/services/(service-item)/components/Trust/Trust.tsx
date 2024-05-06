@@ -60,7 +60,7 @@ const Trust = () => {
 							and premium products are designed to meet the needs
 							of our customers. We have a team of highly skilled
 							technicians who are committed to providing quality
-							services that exceed expectations. Whether it's a
+							services that exceed expectations. Whether it&apos;s a
 							routine maintenance task or a complex repair, we
 							guarantee transparent communication, reliable
 							warranties, and a commitment to customer

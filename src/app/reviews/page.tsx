@@ -24,10 +24,10 @@ const page = () => {
                             <p>
                                 Took my daughters car for a tune-up before going
                                 to college. And then my car for an oil change.
-                                They did a great job, sent pictures and didn't
-                                give me a long list of things that needed to be
-                                done like others always do! I will definitely be
-                                returning and sending my friends!
+                                They did a great job, sent pictures and
+                                didn&apos;t give me a long list of things that
+                                needed to be done like others always do! I will
+                                definitely be returning and sending my friends!
                             </p>
                             <p>
                                 <span>- Pam Smith</span>

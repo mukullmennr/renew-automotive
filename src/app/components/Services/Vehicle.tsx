@@ -7,11 +7,11 @@ const Vehicle = () => {
             <Container>
                 <div className={style.content}>
                     <h3>
-                        Vehicle damage? <span>We'll fix it</span>
+                        Vehicle damage? <span>We&apos;ll fix it</span>
                     </h3>
                     <p>
-                        We specialize in car repair. We're the one of largest
-                        accident damage repair network
+                        We specialize in car repair. We&apos;re the one of
+                        largest accident damage repair network
                     </p>
                     <a href="tel:(470 ) 384 9791">(470 ) 384 9791</a>
                     <a href="/contact-us">Need Help?</a>

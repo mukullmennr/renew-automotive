@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import Container from "../Container/Container";
 import style from "./appointment.module.scss";
 interface AppointmentsProps {
@@ -9,6 +10,30 @@ const Appointments: React.FC<AppointmentsProps> = ({ onClose }) => {
         e.preventDefault();
         onClose();
     };
+
+    const [minDate, setMinDate] = useState("");
+    const [maxDate, setMaxDate] = useState("");
+
+    // Function to calculate the max date (2 months from today)
+    const calculateMaxDate = () => {
+        const today = new Date();
+        const maxDate = new Date(
+            today.getFullYear(),
+            today.getMonth() + 2,
+            today.getDate()
+        );
+        return maxDate.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    };
+
+    useEffect(() => {
+        const today = new Date();
+        setMinDate(today.toISOString().split("T")[0]);
+        setMaxDate(calculateMaxDate());
+        document.body.style.overflowY = "hidden";
+        return () => {
+            document.body.style.overflowY = "scroll";
+        };
+    }, []);
     return (
         <div className={style.modal_overlay}>
             <Container>
@@ -78,10 +103,15 @@ const Appointments: React.FC<AppointmentsProps> = ({ onClose }) => {
                                         <input
                                             type="date"
                                             placeholder="Requested Date"
+                                            min={minDate}
+                                            max={maxDate}
+                                            // type={inputType}
+                                            // onFocus={() => setInputType("date")}
+                                            // onBlur={() => setInputType("text")}
                                         />
                                         <input
-                                            type="time"
-                                            placeholder="Vehicle Year"
+                                            type="text"
+                                            placeholder="HH:MM AM/PM"
                                         />
                                         <input
                                             type="text"

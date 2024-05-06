@@ -18,3 +18,11 @@ export const services = {
     heading: ["Our Services"],
     link: "/services",
 };
+export const disclaimer = {
+    heading: ["Disclaimer"],
+    link: "/disclaimer",
+};
+export const privacy = {
+    heading: ["Privacy Policy"],
+    link: "/privacy-policy",
+};

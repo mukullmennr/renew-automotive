@@ -20,7 +20,7 @@ const Welcome = () => {
                             <p>
                                 Renew Automotive is not just an automotive
                                 service provider; we are your committed partner
-                                in ensuring your vehicle's performance and
+                                in ensuring your vehicle&apos;s performance and
                                 longevity.
                             </p>
                             <p>
@@ -41,9 +41,9 @@ const Welcome = () => {
                             deserves the highest standard of care. Therefore, we
                             have a team of passionate professionals dedicated to
                             delivering expert service with a personal touch.
-                            Whether it's routine maintenance or complex repairs,
-                            we are here to ensure that your vehicle receives the
-                            attention it deserves.
+                            Whether it&apos;s routine maintenance or complex
+                            repairs, we are here to ensure that your vehicle
+                            receives the attention it deserves.
                         </p>
                     </div>
                     <div className={style.item}>
@@ -65,12 +65,12 @@ const Welcome = () => {
                             Our <span>Promise</span>
                         </h4>
                         <p>
-                            When you choose Renew Automotive, you're not only
-                            selecting a service provider; you're choosing a
-                            partner you can rely on. Our promise to you is
-                            simple: to provide expert service, convenience, and
-                            peace of mind so you can hit the road with
-                            confidence.
+                            When you choose Renew Automotive, you&apos;re not
+                            only selecting a service provider; you&apos;re
+                            choosing a partner you can rely on. Our promise to
+                            you is simple: to provide expert service,
+                            convenience, and peace of mind so you can hit the
+                            road with confidence.
                         </p>
                     </div>
                 </div>
