@@ -1,0 +1,111 @@
+@use "/src/styles/abstract" as ab;
+
+.dialog {
+	border: 0;
+
+	width: min(80%, 45.75em);
+	filter: drop-shadow(0px 4px 4px 0px rgba(0, 0, 0, 0.25));
+
+	background-image: linear-gradient(#2b000180, #2b000180),
+		url("../../../../../../../public/services-page/free-modal.webp");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+
+	// min-height: 30rem;
+	border-radius: 1rem;
+	padding-block-end: 3rem;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	&::backdrop {
+		background-color: hsla(0, 50%, 0%, 0.6);
+		backdrop-filter: blur(0.2em);
+	}
+
+	.menu {
+		button {
+			display: block;
+			margin-inline-start: auto;
+			background-color: transparent;
+			border: 0;
+			cursor: pointer;
+
+			svg {
+				color: var(--white);
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	.content {
+		color: var(--white);
+		text-align: center;
+
+		padding-inline: 2em;
+
+		.heading {
+			font-size: 5rem;
+		}
+
+		.list {
+			ul {
+				list-style-type: none;
+				padding: 0;
+
+				display: flex;
+				flex-direction: column;
+
+				@include ab.screen-48 {
+					flex-direction: row;
+					justify-content: space-around;
+				}
+
+				li {
+					font-weight: 700;
+					&::before {
+						content: "";
+						background-image: url('data:image/svg+xml,%3Csvg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M9.82659 22.1454C14.8885 22.1454 18.9921 18.0419 18.9921 12.9799C18.9921 7.91797 14.8885 3.81445 9.82659 3.81445C4.76465 3.81445 0.661133 7.91797 0.661133 12.9799C0.661133 18.0419 4.76465 22.1454 9.82659 22.1454Z" fill="white"/%3E%3Cpath d="M9.93074 20.0642L9.81448 19.8661C8.03871 16.8406 3.31984 10.4199 3.27217 10.3554L3.2041 10.2629L4.8118 8.67408L9.90088 12.2276C13.1051 8.06969 16.0944 5.21382 18.0443 3.5461C20.1774 1.72178 21.5659 0.881929 21.5799 0.873881L21.6115 0.85498H24.3386L24.0781 1.08697C17.3785 7.05428 10.1168 19.7372 10.0445 19.8646L9.93074 20.0642Z" fill="%23C2171A"/%3E%3C/svg%3E%0A');
+						width: 1.75rem;
+						height: 1.75rem;
+
+						display: inline-block;
+						vertical-align: middle;
+						background-repeat: no-repeat;
+					}
+				}
+			}
+		}
+
+		.card {
+			margin-block-start: 1.5em;
+
+			display: grid;
+			gap: 1.25em;
+
+			justify-content: center;
+
+			@include ab.screen-48 {
+				grid-template-columns: repeat(3, 1fr);
+			}
+
+			> * {
+				background: rgba(0, 0, 0, 0.5);
+				backdrop-filter: blur(4px);
+
+				padding-block: 1em;
+				padding-inline: 0.5em;
+
+				border-radius: 0.25em;
+			}
+
+			h2 {
+				font-size: 2rem;
+				color: var(--accent);
+			}
+
+			p {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}
