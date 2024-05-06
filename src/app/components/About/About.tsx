@@ -5,26 +5,26 @@ import Line from "@/components/SVG/Line";
 import AboutTabs from "./AboutTabs";
 
 const About = () => {
-	return (
-		<div className={styles.about}>
-			<Container type="normal">
-				<div className={styles.heading_container}>
-					<h2 className="subheading">Expert Automotive Care</h2>
+    return (
+        <div className={styles.about}>
+            <Container type="normal">
+                <div className={styles.heading_container}>
+                    <h2 className="subheading">Expert Automotive Care</h2>
 
-					<p className="subheading-support">
-						Navigate Your Car's Transformation Journey with These
-						Essential Steps
-					</p>
+                    <p className="subheading-support">
+                        Navigate Your Car&apos;s Transformation Journey with
+                        These Essential Steps
+                    </p>
 
-					<Line />
-				</div>
-			</Container>
+                    <Line />
+                </div>
+            </Container>
 
-			<Container type="full">
-				<AboutTabs />
-			</Container>
-		</div>
-	);
+            <Container type="full">
+                <AboutTabs />
+            </Container>
+        </div>
+    );
 };
 
 export default About;

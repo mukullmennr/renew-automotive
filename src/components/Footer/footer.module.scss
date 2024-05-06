@@ -226,7 +226,7 @@
         .copy {
             text-align: center;
             color: var(--white);
-            font-size: 0.8rem;
+            font-size: clamp(0.6rem, 1vw, 1rem);
             padding-block: 1em;
         }
     }

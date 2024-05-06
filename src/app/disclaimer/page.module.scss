@@ -1,0 +1,11 @@
+.disclaimer {
+    margin-block: 2.5em;
+    display: grid;
+    gap: 2em;
+    h3 {
+        font-size: 1rem;
+    }
+    p {
+        font-size: clamp(0.7rem, 1vw, 1rem);
+    }
+}

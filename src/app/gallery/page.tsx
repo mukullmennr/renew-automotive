@@ -7,7 +7,7 @@ import "lightgallery/scss/lightgallery.scss";
 import "lightgallery/scss/lg-zoom.scss";
 import Common_hero from "@/components/common_hero/Common_hero";
 import { gallery } from "../../data/hero";
-const page = () => {
+const Page = () => {
     const [selected, setSelected] = useState<string | null>("button_a");
     const handleRadioChange = (value: string) => {
         setSelected(value);
@@ -185,4 +185,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Page;

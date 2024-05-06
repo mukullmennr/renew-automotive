@@ -68,6 +68,23 @@
                     color: #a8a8a8;
                 }
             }
+            textarea {
+                background-color: #f7f7f7;
+                border: none;
+                font-size: clamp(0.7rem, 1vw, 1rem);
+                // color: #a8a8a8;
+                padding-block: 0.8em;
+                padding-inline: 1em;
+                &::placeholder {
+                    color: #a8a8a8;
+                    opacity: 1; /* Firefox */
+                }
+
+                &::-ms-input-placeholder {
+                    /* Edge 12 -18 */
+                    color: #a8a8a8;
+                }
+            }
             select {
                 background-color: #f7f7f7;
                 border: none;

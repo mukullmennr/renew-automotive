@@ -8,17 +8,17 @@ import { Reviews } from "./components/Reviews/Reviews";
 import Steps from "./components/Steps/Steps";
 
 const page = () => {
-	return (
-		<div className="group">
-			<Hero />
-			<Services />
-			<About />
-			<Steps />
-			<Reviews />
-			<Faqs />
-			<Automobiles />
-		</div>
-	);
+    return (
+        <div className="group">
+            <Hero />
+            <Services />
+            <About />
+            <Steps />
+            <Reviews />
+            <Faqs />
+            <Automobiles />
+        </div>
+    );
 };
 
 export default page;

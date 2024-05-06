@@ -103,11 +103,11 @@ const Faqs = () => {
                                         <p>
                                             Yes, we understand that unexpected
                                             automotive repairs can put a strain
-                                            on your budget. That's why we offer
-                                            flexible financing options to help
-                                            you manage the cost of repairs
+                                            on your budget. That&apos;s why we
+                                            offer flexible financing options to
+                                            help you manage the cost of repairs
                                             without compromising on quality or
-                                            safety."
+                                            safety.
                                         </p>
                                     </Accordion.Content>
                                 </Accordion.Item>

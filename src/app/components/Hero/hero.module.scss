@@ -42,9 +42,14 @@
 
         .text {
             font-size: clamp(0.75rem, 1.25vi, 1rem);
-
+            span {
+                display: none;
+            }
             @include ab.screen-40 {
                 font-weight: 500;
+                span {
+                    display: inline;
+                }
             }
         }
 

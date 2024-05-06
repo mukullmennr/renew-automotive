@@ -115,7 +115,7 @@ const Navigation = () => {
                     <div className={styles.logo}>
                         <Link href="/">
                             <Image
-                                src="/logo.png"
+                                src="/logo.svg"
                                 alt="Renew Automotive Services"
                                 width="162"
                                 height="48"

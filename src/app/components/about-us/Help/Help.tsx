@@ -12,12 +12,13 @@ const Help = () => {
                 <div className={style.content}>
                     <div>
                         <h4>
-                            Need Help With Your Car? <span>We'll fix it</span>
+                            Need Help With Your Car?{" "}
+                            <span>We&apos;ll fix it</span>
                         </h4>
                         <p>
                             We specialise in repairing accident damage to
-                            vehicles. In fact, we're the second largest accident
-                            damage repair network.
+                            vehicles. In fact, we&apos;re the second largest
+                            accident damage repair network.
                         </p>
                     </div>
 
