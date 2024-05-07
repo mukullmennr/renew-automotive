@@ -174,12 +174,30 @@
             }
             .controller {
                 .radio {
+                    display: flex;
+                    justify-content: center;
+                    gap: 1.5em;
+                    span {
+                        display: inline-block;
+                        width: 0.6em;
+                        height: 0.6em;
+                        // outline: 2px solid red;
+                        border-radius: 50%;
+                        background-color: #c1c1c1;
+                        transition: width 200ms, border-radius 200ms;
+                    }
                     input {
-                        accent-color: #a11e21;
-                        background: #a11e21;
-                        @include ab.screen-48 {
-                            display: none;
+                        display: none;
+                    }
+                    input[type="radio"]:checked + label {
+                        span {
+                            width: 1.5em;
+                            border-radius: 10px;
+                            background-color: var(--accent);
                         }
+                    }
+                    @include ab.screen-48 {
+                        display: none;
                     }
                 }
                 .button {

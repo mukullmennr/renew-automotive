@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./navigation.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Container from "../Container/Container";
 import { useSelectedLayoutSegment } from "next/navigation";
-import appointment from "../Appointment/Appointments";
+
 import Appointments from "@/components/Appointment/Appointments";
 const links = [
     {
@@ -48,7 +48,14 @@ const Navigation = () => {
     const [active, setActive] = useState(false);
     const segment = useSelectedLayoutSegment();
     const [open, setOpen] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const openModal = () => {
+        dialogRef.current?.showModal();
+    };
+
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
     useEffect(() => {
         setOpen(false);
     }, [segment]);
@@ -100,7 +107,7 @@ const Navigation = () => {
                     </div>
 
                     <div className={styles.appointment}>
-                        <button onClick={() => setShowModal(true)}>
+                        <button onClick={openModal}>
                             <span>
                                 <FontAwesomeIcon icon={faArrowRight} />
                             </span>
@@ -143,11 +150,8 @@ const Navigation = () => {
                     </div>
                 </Container>
             </div>
-            {showModal && (
-                <Appointments
-                    onClose={() => setShowModal(false)}
-                ></Appointments>
-            )}
+
+            <Appointments dialogRef={dialogRef} closeModal={closeModal} />
         </nav>
     );
 };

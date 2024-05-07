@@ -13,30 +13,13 @@
     overflow-x: hidden;
     position: relative;
     margin-block: 2em;
+    // outline: 2px solid red;
     .slides {
         display: grid;
         grid-template-columns: repeat(3, 100%);
-        animation: web 25s infinite;
+        // animation: web 25s infinite;
+        transition: transform 0.5s ease;
 
-        &:hover {
-            animation-play-state: paused;
-        }
-        @keyframes web {
-            0%,
-            25%,
-            99%,
-            100% {
-                transform: translateX(0);
-            }
-            30%,
-            55% {
-                transform: translateX(calc(-100% * 1));
-            }
-            60%,
-            85% {
-                transform: translateX(calc(-100% * 2));
-            }
-        }
         .item {
             display: flex;
             flex-direction: column;
@@ -64,6 +47,31 @@
                 width: clamp(25em, 36vw, 36em);
                 padding-block: 1em;
             }
+        }
+    }
+}
+.radio {
+    // outline: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    span {
+        display: inline-block;
+        width: 0.6em;
+        height: 0.6em;
+        // outline: 2px solid red;
+        border-radius: 50%;
+        background-color: #c1c1c1;
+        transition: width 200ms, border-radius 200ms;
+    }
+    input {
+        display: none;
+    }
+    input[type="radio"]:checked + label {
+        span {
+            width: 1.5em;
+            border-radius: 10px;
+            background-color: var(--accent);
         }
     }
 }

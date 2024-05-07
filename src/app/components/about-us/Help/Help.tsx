@@ -1,11 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import style from "./help.module.scss";
 import Container from "@/components/Container/Container";
 import Appointments from "@/components/Appointment/Appointments";
 
 const Help = () => {
-    const [showModal, setShowModal] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const openModal = () => {
+        dialogRef.current?.showModal();
+    };
+
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
     return (
         <div>
             <Container>
@@ -23,19 +30,13 @@ const Help = () => {
                     </div>
 
                     <a href="tel:(470 ) 384 9791">(470 ) 384 9791</a>
-                    <button onClick={() => setShowModal(true)}>
-                        Appointment
-                    </button>
+                    <button onClick={openModal}>Appointment</button>
 
                     <div className={style.watermark}>
                         <p>Schedule</p>
                     </div>
                 </div>
-                {showModal && (
-                    <Appointments
-                        onClose={() => setShowModal(false)}
-                    ></Appointments>
-                )}
+                <Appointments dialogRef={dialogRef} closeModal={closeModal} />
             </Container>
         </div>
     );

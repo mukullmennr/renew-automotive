@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import style from "./offer.module.scss";
 import Line from "@/components/SVG/Line";
 import Container from "@/components/Container/Container";
@@ -7,7 +7,14 @@ import Appointments from "@/components/Appointment/Appointments";
 
 const Offer = () => {
     const [open, setOpen] = useState(true);
-    const [showModal, setShowModal] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const openModal = () => {
+        dialogRef.current?.showModal();
+    };
+
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
     return (
         <Container>
             <div className={style.offer}>
@@ -28,9 +35,7 @@ const Offer = () => {
                         of the vehicle.
                     </p>
                     <div className={style.button}>
-                        <button onClick={() => setShowModal(true)}>
-                            Book an Appointment
-                        </button>
+                        <button onClick={openModal}>Book an Appointment</button>
                     </div>
                 </div>
                 <div className={style.item1}>
@@ -155,16 +160,10 @@ const Offer = () => {
                     </div>
                 </div>
                 <div className={style.button2}>
-                    <button onClick={() => setShowModal(true)}>
-                        Book an Appointment
-                    </button>
+                    <button onClick={openModal}>Book an Appointment</button>
                 </div>
             </div>
-            {showModal && (
-                <Appointments
-                    onClose={() => setShowModal(false)}
-                ></Appointments>
-            )}
+            <Appointments dialogRef={dialogRef} closeModal={closeModal} />
         </Container>
     );
 };

@@ -216,14 +216,23 @@ export const Reviews = () => {
                         <div className={style.controller}>
                             <div className={style.radio}>
                                 {[0, 1, 2, 3].map((index) => (
-                                    <input
-                                        key={index}
-                                        type="radio"
-                                        checked={selectedRadio === index}
-                                        onChange={() =>
-                                            handleRadioChange(index)
-                                        }
-                                    />
+                                    <>
+                                        <input
+                                            key={index}
+                                            type="radio"
+                                            id={index.toString()}
+                                            checked={selectedRadio === index}
+                                            onChange={() =>
+                                                handleRadioChange(index)
+                                            }
+                                        />
+                                        <label
+                                            htmlFor={index.toString()}
+                                            key={index}
+                                        >
+                                            <span></span>
+                                        </label>
+                                    </>
                                 ))}
                             </div>
                             <div className={style.button}>

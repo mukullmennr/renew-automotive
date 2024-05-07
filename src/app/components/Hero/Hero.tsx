@@ -1,10 +1,17 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import styles from "./hero.module.scss";
 import Container from "@/components/Container/Container";
 import Appointments from "@/components/Appointment/Appointments";
 const Hero = () => {
-    const [showModal, setShowModal] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const openModal = () => {
+        dialogRef.current?.showModal();
+    };
+
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
     return (
         <div className={styles.hero}>
             <Container>
@@ -30,16 +37,10 @@ const Hero = () => {
                     </p>
 
                     <div className={styles.button}>
-                        <button onClick={() => setShowModal(true)}>
-                            Schedule Service
-                        </button>
+                        <button onClick={openModal}>Schedule Service</button>
                     </div>
                 </div>
-                {showModal && (
-                    <Appointments
-                        onClose={() => setShowModal(false)}
-                    ></Appointments>
-                )}
+                <Appointments dialogRef={dialogRef} closeModal={closeModal} />
             </Container>
         </div>
     );

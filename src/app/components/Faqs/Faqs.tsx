@@ -1,11 +1,18 @@
 "use client";
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import style from "./faqs.module.scss";
 import * as Accordion from "@radix-ui/react-accordion";
 import Container from "../../../components/Container/Container";
 import Appointments from "@/components/Appointment/Appointments";
 const Faqs = () => {
-    const [showModal, setShowModal] = useState(false);
+    const dialogRef = useRef<HTMLDialogElement | null>(null);
+    const openModal = () => {
+        dialogRef.current?.showModal();
+    };
+
+    const closeModal = () => {
+        dialogRef.current?.close();
+    };
     return (
         <div>
             <Container>
@@ -145,17 +152,13 @@ const Faqs = () => {
                         {/* <img src="/faq.png" alt="" /> */}
                         <div>
                             <h3>Diagnostics, Repairs & Servicing</h3>
-                            <button onClick={() => setShowModal(true)}>
+                            <button onClick={openModal}>
                                 Book an Appointment
                             </button>
                         </div>
                     </div>
                 </div>
-                {showModal && (
-                    <Appointments
-                        onClose={() => setShowModal(false)}
-                    ></Appointments>
-                )}
+                <Appointments dialogRef={dialogRef} closeModal={closeModal} />
             </Container>
         </div>
     );
